@@ -1,0 +1,50 @@
+.no-encontrada {
+  display: grid;
+  place-items: center;
+  padding-block: clamp(40px, 8vw, 90px);
+}
+
+.no-encontrada__caja {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  max-width: 660px;
+  padding: clamp(28px, 5vw, 52px);
+  border-radius: var(--radio-lg);
+  background: var(--papel);
+  border: 1.5px solid rgba(59, 48, 42, 0.1);
+  box-shadow: var(--sombra-suave);
+  text-align: center;
+}
+
+.no-encontrada__mascota {
+  width: clamp(110px, 20vw, 150px);
+  height: auto;
+  animation: flotar 8s ease-in-out infinite;
+}
+
+.no-encontrada__caja h1 {
+  font-size: clamp(1.7rem, 4vw, 2.6rem);
+}
+
+.no-encontrada__mensaje {
+  max-width: 46ch;
+  color: var(--tinta-suave);
+  line-height: 1.6;
+}
+
+.no-encontrada__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.no-encontrada__nota {
+  margin-top: 6px;
+  color: var(--tinta-suave);
+  font-size: 0.84rem;
+  opacity: 0.85;
+}

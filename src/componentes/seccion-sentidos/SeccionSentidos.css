@@ -1,0 +1,27 @@
+.seccion-sentidos {
+  margin-top: clamp(34px, 5vw, 56px);
+  padding-top: clamp(22px, 3vw, 30px);
+  border-top: 1px dashed rgba(59, 48, 42, 0.16);
+}
+
+.seccion-sentidos__grilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: clamp(14px, 2vw, 22px);
+}
+
+.seccion-sentidos__nota {
+  margin-top: 18px;
+  color: var(--tinta-suave);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+.seccion-sentidos__nota code {
+  padding: 1px 6px;
+  border-radius: 6px;
+  background: rgba(59, 48, 42, 0.06);
+  font-size: 0.76rem;
+  color: var(--terracota-oscuro);
+}

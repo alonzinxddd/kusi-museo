@@ -1,0 +1,60 @@
+.aviso {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  z-index: 95;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  width: max-content;
+  max-width: min(92vw, 620px);
+  padding: 12px 14px 12px 18px;
+  border-radius: var(--radio-sm);
+  background: #3b302a;
+  color: var(--crema);
+  box-shadow: 0 16px 40px rgba(59, 48, 42, 0.3);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 18px);
+  transition: opacity var(--transicion), transform var(--transicion);
+}
+
+.aviso--visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
+.aviso > svg {
+  flex-shrink: 0;
+  color: var(--mostaza);
+}
+
+.aviso p {
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.aviso button {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(253, 246, 234, 0.12);
+  color: var(--crema);
+}
+
+.aviso button:hover {
+  background: rgba(253, 246, 234, 0.22);
+}
+
+@media (max-width: 720px) {
+  .aviso {
+    bottom: calc(82px + env(safe-area-inset-bottom, 0px));
+  }
+}

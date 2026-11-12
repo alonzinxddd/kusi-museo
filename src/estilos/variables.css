@@ -1,0 +1,47 @@
+:root {
+  color-scheme: light;
+
+  /* Paleta cálida */
+  --crema: #fdf6ea;
+  --crema-hondo: #f6e7d8;
+  --papel: #fffdf8;
+  --tinta: #3b302a;
+  --tinta-suave: #6f5f55;
+  --terracota: #d97757;
+  --terracota-oscuro: #b85c3f;
+  --coral: #e8a598;
+  --mostaza: #e9b44c;
+  --salvia: #8fa98f;
+  --salvia-oscuro: #5f7a63;
+  --azul: #3d5a6c;
+  --cielo: #a9c6c9;
+  --rosa: #f0c4ba;
+  --durazno: #f6d9a8;
+  --blanco: #ffffff;
+
+  /* Superficies */
+  --sombra-suave: 0 12px 30px rgba(104, 77, 58, 0.09);
+  --sombra-media: 0 20px 48px rgba(104, 77, 58, 0.14);
+  --sombra-baja: 0 4px 14px rgba(104, 77, 58, 0.08);
+  --borde: 1.5px solid rgba(59, 48, 42, 0.12);
+  --borde-fuerte: 2px solid rgba(59, 48, 42, 0.18);
+
+  /* Formas */
+  --radio-xs: 10px;
+  --radio-sm: 16px;
+  --radio-md: 24px;
+  --radio-lg: 32px;
+  --radio-xl: 44px;
+  --radio-pildora: 999px;
+
+  /* Tipografía */
+  --fuente-titulos: 'Baloo 2', 'Trebuchet MS', system-ui, sans-serif;
+  --fuente-texto: 'Nunito', 'Segoe UI', system-ui, sans-serif;
+
+  /* Medidas */
+  --ancho-max: 1180px;
+  --espacio-pagina: clamp(18px, 4vw, 40px);
+  --alto-barra: 76px;
+  --transicion: 220ms cubic-bezier(0.2, 0.7, 0.3, 1);
+  --transicion-lenta: 420ms cubic-bezier(0.2, 0.7, 0.3, 1);
+}

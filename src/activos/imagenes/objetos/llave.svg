@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Llave antigua">
+  <g transform="rotate(-38 80 80)">
+    <circle cx="46" cy="80" r="30" fill="#D9A86C" stroke="#3B302A" stroke-width="6"/>
+    <circle cx="46" cy="80" r="12" fill="#FBF3E4" stroke="#3B302A" stroke-width="5"/>
+    <path d="M74 80h58v18H112v14H98V98H88v12H74Z" fill="#D9A86C" stroke="#3B302A" stroke-width="6" stroke-linejoin="round"/>
+    <path d="M30 60c10-6 22-6 32 0" fill="none" stroke="#FFF3C4" stroke-width="5" stroke-linecap="round"/>
+    <path d="M84 70h36" stroke="#FFF3C4" stroke-width="4" stroke-linecap="round" opacity=".6"/>
+    <circle cx="46" cy="80" r="2" fill="none"/>
+  </g>
+</svg>

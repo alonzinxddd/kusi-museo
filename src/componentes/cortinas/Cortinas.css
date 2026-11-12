@@ -1,0 +1,160 @@
+.cortinas {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  max-width: 100%;
+  margin-inline: auto;
+  overflow: hidden;
+  border-radius: var(--radio-lg);
+  border: 3px solid rgba(59, 48, 42, 0.16);
+  box-shadow: 0 26px 60px rgba(104, 77, 58, 0.2);
+  cursor: pointer;
+  background: #b83227;
+  touch-action: manipulation;
+}
+
+.cortinas:focus-visible {
+  outline: 3px solid var(--azul);
+  outline-offset: 4px;
+}
+
+.cortinas__fondo {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  background: var(--crema);
+}
+
+.cortinas__velo {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(59, 48, 42, 0.05), rgba(59, 48, 42, 0.18));
+  pointer-events: none;
+  transition: opacity 600ms ease;
+}
+
+.cortinas--abiertas .cortinas__velo {
+  opacity: 0;
+}
+
+.cortinas__tela {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  background: #b83227;
+  transition: transform 1.25s cubic-bezier(0.2, 0.7, 0.3, 1);
+  z-index: 2;
+  filter: drop-shadow(0 0 12px rgba(59, 48, 42, 0.35));
+}
+
+.cortinas__tela--izquierda {
+  left: 0;
+  transform: translateX(0);
+}
+
+.cortinas__tela--derecha {
+  right: 0;
+  transform: translateX(0);
+}
+
+.cortinas--abiertas .cortinas__tela--izquierda {
+  transform: translateX(-102%);
+}
+
+.cortinas--abiertas .cortinas__tela--derecha {
+  transform: translateX(102%);
+}
+
+/* Serpentinas ----------------------------------------------------------- */
+
+.cortinas__serpentinas {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.cortinas__serpentina {
+  position: absolute;
+  top: -40px;
+  left: calc(4% + (var(--indice) * 6.6%));
+  width: 10px;
+  height: 0;
+  border-radius: 5px;
+  opacity: 0;
+  transform: rotate(0deg);
+}
+
+.cortinas--abiertas .cortinas__serpentina {
+  opacity: 1;
+  animation: serpentina-caer 2s cubic-bezier(0.2, 0.6, 0.3, 1) forwards;
+  animation-delay: calc(var(--indice) * 70ms);
+}
+
+@keyframes serpentina-caer {
+  0% {
+    height: 0;
+    transform: translateY(0) rotate(0deg) scaleX(1);
+    opacity: 0;
+    background: hsl(calc(10 + var(--indice) * 22), 85%, 62%);
+  }
+  15% {
+    opacity: 1;
+    height: 70px;
+  }
+  100% {
+    height: 180px;
+    transform: translateY(115vh) rotate(900deg) scaleX(0.5);
+    opacity: 0;
+    background: hsl(calc(10 + var(--indice) * 22), 90%, 48%);
+  }
+}
+
+.cortinas__invitacion {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #fffdf8;
+  text-shadow: 0 2px 8px rgba(59, 48, 42, 0.6);
+  pointer-events: none;
+  animation: aparecer-escala 600ms 400ms ease both;
+}
+
+.cortinas__invitacion-texto {
+  font-family: var(--fuente-titulos);
+  font-size: clamp(1.4rem, 3.2vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.cortinas__invitacion-icono {
+  font-size: 1.6rem;
+  animation: destello 2s ease-in-out infinite;
+}
+
+@media (max-width: 620px) {
+  .cortinas__invitacion-texto {
+    font-size: 1.2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cortinas__tela {
+    transition-duration: 0.01ms;
+  }
+
+  .cortinas__serpentina {
+    display: none;
+  }
+}

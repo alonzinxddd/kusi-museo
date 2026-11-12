@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Estrella dorada">
+  <path d="M80 12 96 57 144 60 107 88 120 134 80 108 40 134 53 88 16 60 64 57Z" fill="#E9B44C" stroke="#3B302A" stroke-width="6" stroke-linejoin="round"/>
+  <circle cx="64" cy="76" r="5" fill="#3B302A"/>
+  <circle cx="96" cy="76" r="5" fill="#3B302A"/>
+  <path d="M68 91c7 7 17 7 24 0" fill="none" stroke="#3B302A" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="52" cy="88" r="7" fill="#E8A598" opacity=".85"/>
+  <circle cx="108" cy="88" r="7" fill="#E8A598" opacity=".85"/>
+  <path d="M80 34l5 12 13 1-10 9 3 13-11-7-11 7 3-13-10-9 13-1Z" fill="#F2C96B" opacity=".7"/>
+</svg>

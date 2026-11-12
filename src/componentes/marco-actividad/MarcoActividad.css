@@ -1,0 +1,163 @@
+.marco-actividad {
+  padding-block: clamp(18px, 3vw, 30px) clamp(30px, 5vw, 56px);
+}
+
+/* Migas de pan ---------------------------------------------------------- */
+
+.migas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 20px;
+  color: var(--tinta-suave);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.migas__enlace {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 6px;
+  border-radius: 8px;
+  color: var(--tinta-suave);
+  text-decoration: none;
+}
+
+.migas__enlace:hover {
+  color: var(--terracota-oscuro);
+  background: rgba(255, 253, 248, 0.7);
+}
+
+.migas__separador {
+  flex-shrink: 0;
+  opacity: 0.5;
+}
+
+.migas__actual {
+  padding: 4px 6px;
+  color: var(--tinta);
+  max-width: 40ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Cabecera -------------------------------------------------------------- */
+
+.marco-actividad__cabecera {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px 32px;
+  margin-bottom: 22px;
+}
+
+.marco-actividad__titulo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  max-width: 62ch;
+}
+
+.marco-actividad__titulo h1 {
+  font-size: clamp(1.85rem, 4.2vw, 3rem);
+}
+
+.marco-actividad__descripcion {
+  color: var(--tinta-suave);
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+
+.marco-actividad__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Guía de Kusi ---------------------------------------------------------- */
+
+.guia-kusi {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  margin-bottom: clamp(20px, 3vw, 32px);
+  border-radius: var(--radio-md);
+  background: linear-gradient(135deg, rgba(255, 253, 248, 0.95), var(--color-suave-marco, var(--crema-hondo)));
+  border: 1.5px solid color-mix(in srgb, var(--color-marco, var(--terracota)) 24%, transparent);
+}
+
+.guia-kusi__mascota {
+  width: 68px;
+  height: auto;
+  flex-shrink: 0;
+  animation: flotar 7s ease-in-out infinite;
+}
+
+.guia-kusi__texto {
+  flex: 1;
+  min-width: 0;
+}
+
+.guia-kusi__texto strong {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--color-marco, var(--terracota-oscuro));
+  font-family: var(--fuente-titulos);
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.guia-kusi__texto p {
+  color: var(--tinta-suave);
+  font-size: 0.94rem;
+  line-height: 1.5;
+}
+
+.guia-kusi__boton {
+  flex-shrink: 0;
+}
+
+/* Cuerpo ---------------------------------------------------------------- */
+
+.marco-actividad__cuerpo {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(18px, 2.5vw, 26px);
+}
+
+@media (max-width: 760px) {
+  .guia-kusi {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .guia-kusi__mascota {
+    width: 54px;
+  }
+
+  .guia-kusi__boton {
+    width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .migas {
+    font-size: 0.78rem;
+  }
+
+  .marco-actividad__acciones {
+    width: 100%;
+  }
+
+  .marco-actividad__acciones .boton {
+    flex: 1;
+  }
+}

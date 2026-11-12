@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Animal">
+  <rect width="240" height="240" rx="28" fill="#F6E7D8"/>
+  <g transform="translate(120 128)">
+    <ellipse cx="0" cy="34" rx="62" ry="16" fill="#D9BFA5" opacity=".45"/>
+    <circle cx="0" cy="-10" r="58" fill="#FFFDF8" stroke="#3B302A" stroke-width="6"/>
+    <path d="M-46 -52l-16 -30 30 12Z" fill="#E9B44C" stroke="#3B302A" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M46 -52l16 -30-30 12Z" fill="#E9B44C" stroke="#3B302A" stroke-width="5" stroke-linejoin="round"/>
+    <circle cx="-18" cy="-12" r="7" fill="#3B302A"/>
+    <circle cx="18" cy="-12" r="7" fill="#3B302A"/>
+    <circle cx="-16" cy="-14" r="2.5" fill="#FFFDF8"/>
+    <circle cx="20" cy="-14" r="2.5" fill="#FFFDF8"/>
+    <path d="M-12 8c4 6 20 6 24 0" fill="none" stroke="#3B302A" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="-34" cy="0" r="7" fill="#E8A598" opacity=".7"/>
+    <circle cx="34" cy="0" r="7" fill="#E8A598" opacity=".7"/>
+    <path d="M-10 24c4 10 20 10 28 0" fill="none" stroke="#3B302A" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <text x="120" y="218" text-anchor="middle" font-family="Nunito, sans-serif" font-size="16" font-weight="700" fill="#6f5f55">Tu animal aquí</text>
+</svg>

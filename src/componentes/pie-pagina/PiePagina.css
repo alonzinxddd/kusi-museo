@@ -1,0 +1,140 @@
+.pie {
+  margin-top: clamp(48px, 7vw, 90px);
+  padding-top: clamp(36px, 5vw, 58px);
+  background: linear-gradient(180deg, rgba(246, 231, 216, 0.55), rgba(246, 231, 216, 0.95));
+  border-top: 1px solid rgba(59, 48, 42, 0.08);
+}
+
+.pie__contenido {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr 1.4fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.pie__marca {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.pie__marca img {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+}
+
+.pie__marca strong {
+  display: block;
+  font-family: var(--fuente-titulos);
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.pie__marca p {
+  margin-top: 8px;
+  max-width: 30ch;
+  color: var(--tinta-suave);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.pie__enlaces {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  align-items: flex-start;
+}
+
+.pie__enlaces a {
+  color: var(--tinta-suave);
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.pie__enlaces a:hover {
+  color: var(--terracota-oscuro);
+  text-decoration: underline;
+}
+
+.pie__nota {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pie__privacidad {
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+  color: var(--tinta-suave);
+  font-size: 0.87rem;
+  line-height: 1.55;
+}
+
+.pie__privacidad svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--salvia-oscuro);
+}
+
+.pie__credito {
+  color: var(--tinta-suave);
+  font-size: 0.78rem;
+  opacity: 0.85;
+}
+
+.pie__final {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 28px;
+  padding-block: 18px 24px;
+  border-top: 1px dashed rgba(59, 48, 42, 0.14);
+  color: var(--tinta-suave);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.pie__final svg {
+  color: var(--terracota);
+}
+
+@media (max-width: 900px) {
+  .pie__contenido {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .pie__nota {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 620px) {
+  .pie__contenido {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .pie__enlaces {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+  }
+
+  .pie__nota {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pie__final {
+    text-align: center;
+    font-size: 0.8rem;
+  }
+}

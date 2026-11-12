@@ -1,0 +1,288 @@
+.tesoro__barra {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 18px;
+  border-radius: var(--radio-md);
+  background: var(--papel);
+  border: 1.5px solid rgba(59, 48, 42, 0.09);
+  box-shadow: var(--sombra-baja);
+}
+
+.tesoro__contador {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--tinta-suave);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.tesoro__contador strong {
+  color: var(--tinta);
+  font-weight: 900;
+}
+
+.tesoro__contador-icono {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #f6e4c6;
+  color: #a47418;
+}
+
+/* Escena ---------------------------------------------------------------- */
+
+.tesoro__escena {
+  position: relative;
+  aspect-ratio: 1200 / 675;
+  overflow: hidden;
+  border-radius: var(--radio-md);
+  border: 2px solid rgba(59, 48, 42, 0.14);
+  box-shadow: var(--sombra-media);
+  background: var(--crema-hondo);
+  touch-action: manipulation;
+}
+
+.tesoro__fondo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tesoro__objetos {
+  position: absolute;
+  inset: 0;
+}
+
+.tesoro__objeto {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: clamp(38px, 6.4%, 70px);
+  aspect-ratio: 1;
+  padding: 4px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 253, 248, 0.18);
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  filter: drop-shadow(0 4px 8px rgba(59, 48, 42, 0.28));
+  transition:
+    background-color var(--transicion),
+    transform 180ms ease,
+    box-shadow 180ms ease;
+  animation: flotar 7s ease-in-out infinite;
+}
+
+.tesoro__objeto:nth-child(2n) {
+  animation-delay: -2.4s;
+}
+
+.tesoro__objeto:nth-child(3n) {
+  animation-delay: -4.1s;
+}
+
+.tesoro__objeto img {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.tesoro__objeto:hover,
+.tesoro__objeto:focus-visible {
+  background: rgba(255, 253, 248, 0.55);
+  transform: translate(-50%, -50%) scale(1.14);
+  box-shadow: 0 0 0 4px rgba(255, 253, 248, 0.65);
+  animation-play-state: paused;
+}
+
+.tesoro__objeto--hallado {
+  background: rgba(255, 253, 248, 0.92);
+  box-shadow:
+    0 0 0 3px var(--color-objeto),
+    0 8px 18px rgba(59, 48, 42, 0.22);
+  animation: none;
+  cursor: default;
+}
+
+.tesoro__objeto--pista {
+  background: rgba(255, 249, 236, 0.85);
+  box-shadow:
+    0 0 0 4px var(--mostaza),
+    0 0 0 10px rgba(233, 180, 76, 0.35);
+  animation: latido-suave 1.4s ease-in-out infinite;
+}
+
+.tesoro__objeto-marca {
+  position: absolute;
+  right: -4px;
+  bottom: -4px;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--salvia-oscuro);
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(59, 48, 42, 0.25);
+}
+
+.tesoro__brillo {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--mostaza);
+  filter: drop-shadow(0 4px 14px rgba(233, 180, 76, 0.7));
+  animation: saltito 2.2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Mensaje --------------------------------------------------------------- */
+
+.tesoro__mensaje {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 76px;
+  padding: 12px 18px;
+  border-radius: var(--radio-md);
+  background: linear-gradient(135deg, var(--papel), #fbf1e3);
+  border: 1.5px solid rgba(59, 48, 42, 0.09);
+}
+
+.tesoro__mensaje img {
+  width: 52px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.tesoro__mensaje p {
+  color: var(--tinta-suave);
+  font-size: 0.93rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+/* Cesta ----------------------------------------------------------------- */
+
+.tesoro__cesta {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.tesoro__cesta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 11px;
+  border-radius: var(--radio-sm);
+  background: rgba(255, 253, 248, 0.66);
+  border: 1.5px dashed rgba(59, 48, 42, 0.16);
+  color: var(--tinta-suave);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.tesoro__cesta-item--hallado {
+  border-style: solid;
+  border-color: rgba(143, 169, 143, 0.5);
+  background: #f4f8f0;
+  color: var(--tinta);
+}
+
+.tesoro__cesta-icono {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: rgba(59, 48, 42, 0.05);
+}
+
+.tesoro__cesta-icono img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Logro ----------------------------------------------------------------- */
+
+.tesoro__logro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 22px;
+  border-radius: var(--radio-md);
+  background: linear-gradient(135deg, #fff9ec, #fdf0d5);
+  border: 1.5px solid rgba(233, 180, 76, 0.45);
+}
+
+.tesoro__logro-icono {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--mostaza);
+  color: #fffdf8;
+}
+
+.tesoro__logro > div {
+  flex: 1;
+  min-width: 200px;
+}
+
+.tesoro__logro h2 {
+  font-size: 1.3rem;
+}
+
+.tesoro__logro p {
+  color: var(--tinta-suave);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 860px) {
+  .tesoro__cesta {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 620px) {
+  .tesoro__barra {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .tesoro__barra .boton {
+    width: 100%;
+  }
+
+  .tesoro__cesta {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tesoro__objeto {
+    width: clamp(32px, 9%, 54px);
+    padding: 2px;
+  }
+
+  .tesoro__mensaje {
+    align-items: flex-start;
+  }
+
+  .tesoro__logro .boton {
+    width: 100%;
+  }
+}

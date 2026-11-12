@@ -1,0 +1,7 @@
+#contenido {
+  outline: none;
+}
+
+#contenido:focus-visible {
+  outline: none;
+}

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 470" role="img" aria-label="Kusi, una llama amistosa que saluda">
+  <defs>
+    <linearGradient id="lanaKusi" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFDF8"/>
+      <stop offset="1" stop-color="#F4E3C8"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="212" cy="435" rx="130" ry="20" fill="#D9BFA5" opacity=".45"/>
+  <!-- cola -->
+  <path d="M116 322c-28-8-38 10-30 26 7 14 24 16 33 5" fill="#F4E3C8" stroke="#3B302A" stroke-width="6" stroke-linecap="round"/>
+  <!-- patas -->
+  <rect x="138" y="346" width="32" height="84" rx="16" fill="#F4E3C8" stroke="#3B302A" stroke-width="6"/>
+  <rect x="188" y="350" width="32" height="80" rx="16" fill="#FFFDF8" stroke="#3B302A" stroke-width="6"/>
+  <rect x="250" y="350" width="32" height="80" rx="16" fill="#F4E3C8" stroke="#3B302A" stroke-width="6"/>
+  <rect x="298" y="342" width="32" height="88" rx="16" fill="#FFFDF8" stroke="#3B302A" stroke-width="6"/>
+  <path d="M140 420h28M190 420h28M252 420h28M300 420h28" stroke="#8A6552" stroke-width="6" stroke-linecap="round"/>
+  <!-- cuerpo -->
+  <ellipse cx="236" cy="322" rx="112" ry="76" fill="url(#lanaKusi)" stroke="#3B302A" stroke-width="6"/>
+  <!-- manta -->
+  <path d="M140 300c18-32 70-52 118-48 30 3 56 15 70 34l-20 63c-48 22-105 24-148 2Z" fill="#D97757" stroke="#3B302A" stroke-width="6"/>
+  <path d="M152 318c38 16 92 18 144 2" fill="none" stroke="#E9B44C" stroke-width="10"/>
+  <path d="M166 338c32 13 80 15 118 1" fill="none" stroke="#FBF3E4" stroke-width="6" stroke-dasharray="8 10"/>
+  <path d="M238 278l8 16 18 2-13 13 3 18-16-9-16 9 3-18-13-13 18-2Z" fill="#E9B44C" stroke="#3B302A" stroke-width="4" stroke-linejoin="round"/>
+  <!-- cuello -->
+  <path d="M270 292c-4-64 4-116 34-136h58c24 26 26 84 14 140Z" fill="#FFFDF8" stroke="#3B302A" stroke-width="6"/>
+  <!-- orejas -->
+  <path d="M301 144c-16-30-10-48 4-52 16-4 24 18 22 46" fill="#F4E3C8" stroke="#3B302A" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M359 142c-2-28 8-48 24-44 15 4 18 24 2 52" fill="#F4E3C8" stroke="#3B302A" stroke-width="6" stroke-linejoin="round"/>
+  <!-- cabeza -->
+  <path d="M292 184c0-38 28-62 66-60 37 2 60 28 58 62-2 34-26 54-62 54-38 0-62-22-62-56Z" fill="#FFFDF8" stroke="#3B302A" stroke-width="6"/>
+  <!-- flequillo -->
+  <path d="M305 164c8-26 28-38 52-38 25 0 44 14 51 36-18 2-30-8-38-16-10 14-28 22-65 18Z" fill="#E9B44C" stroke="#3B302A" stroke-width="5" stroke-linejoin="round"/>
+  <!-- ojos -->
+  <circle cx="330" cy="190" r="7" fill="#3B302A"/>
+  <circle cx="382" cy="190" r="7" fill="#3B302A"/>
+  <circle cx="332" cy="187" r="2.5" fill="#FFFDF8"/>
+  <circle cx="384" cy="187" r="2.5" fill="#FFFDF8"/>
+  <!-- hocico -->
+  <ellipse cx="357" cy="220" rx="27" ry="19" fill="#F4E3C8" stroke="#3B302A" stroke-width="4"/>
+  <path d="M349 216c4 6 12 6 16 0" fill="none" stroke="#3B302A" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="351" cy="214" r="2.5" fill="#3B302A"/>
+  <circle cx="363" cy="214" r="2.5" fill="#3B302A"/>
+  <circle cx="310" cy="210" r="8" fill="#E8A598" opacity=".75"/>
+  <circle cx="402" cy="210" r="8" fill="#E8A598" opacity=".75"/>
+  <!-- brazo que saluda -->
+  <path d="M302 310c26-8 44-26 52-48" fill="none" stroke="#3B302A" stroke-width="20" stroke-linecap="round"/>
+  <path d="M302 310c26-8 44-26 52-48" fill="none" stroke="#FFFDF8" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="358" cy="254" r="17" fill="#F4E3C8" stroke="#3B302A" stroke-width="6"/>
+  <path d="M364 244l5-12M372 248l10-8" stroke="#3B302A" stroke-width="5" stroke-linecap="round"/>
+  <!-- estrellas -->
+  <path d="M104 178l5 12 13 1-10 9 3 13-11-7-11 7 3-13-10-9 13-1Z" fill="#E9B44C" stroke="#3B302A" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M354 82l4 9 10 1-8 7 2 10-8-5-9 5 2-10-7-7 10-1Z" fill="#E9B44C" stroke="#3B302A" stroke-width="3.5" stroke-linejoin="round"/>
+</svg>

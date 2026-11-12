@@ -1,0 +1,124 @@
+.tarjeta-sala {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--radio-md);
+  background: var(--papel);
+  border: 1.5px solid rgba(59, 48, 42, 0.1);
+  box-shadow: var(--sombra-baja);
+  color: var(--tinta);
+  text-decoration: none;
+  transition:
+    transform var(--transicion),
+    box-shadow var(--transicion),
+    border-color var(--transicion);
+}
+
+.tarjeta-sala:hover,
+.tarjeta-sala:focus-visible {
+  transform: translateY(-6px);
+  border-color: var(--color-sala);
+  box-shadow: var(--sombra-media);
+  color: var(--tinta);
+}
+
+.tarjeta-sala__imagen {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--color-suave-sala);
+}
+
+.tarjeta-sala__imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transicion-lenta);
+}
+
+.tarjeta-sala:hover .tarjeta-sala__imagen img {
+  transform: scale(1.04);
+}
+
+.tarjeta-sala__completa {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 11px;
+  border-radius: var(--radio-pildora);
+  background: rgba(255, 253, 248, 0.94);
+  color: var(--color-sala);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  box-shadow: var(--sombra-baja);
+}
+
+.tarjeta-sala__cuerpo {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 20px 22px 18px;
+  flex: 1;
+}
+
+.tarjeta-sala__lema {
+  color: var(--color-sala);
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.tarjeta-sala__cuerpo h3 {
+  font-size: 1.4rem;
+}
+
+.tarjeta-sala__descripcion {
+  color: var(--tinta-suave);
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
+.tarjeta-sala__pie {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(59, 48, 42, 0.14);
+  color: var(--tinta-suave);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.tarjeta-sala__ir {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--color-sala);
+  font-weight: 900;
+}
+
+.tarjeta-sala__ir svg {
+  transition: transform var(--transicion);
+}
+
+.tarjeta-sala:hover .tarjeta-sala__ir svg {
+  transform: translateX(4px);
+}
+
+@media (max-width: 560px) {
+  .tarjeta-sala__cuerpo {
+    padding: 16px 18px;
+  }
+
+  .tarjeta-sala__cuerpo h3 {
+    font-size: 1.25rem;
+  }
+}

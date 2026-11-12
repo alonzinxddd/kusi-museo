@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 760" role="img" aria-label="Cortina izquierda">
+  <defs>
+    <linearGradient id="telaRojaIzq" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8B1E1E"/>
+      <stop offset="0.35" stop-color="#C0392B"/>
+      <stop offset="0.7" stop-color="#922B21"/>
+      <stop offset="1" stop-color="#6E1A1A"/>
+    </linearGradient>
+    <linearGradient id="borlaIzq" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F2C96B"/>
+      <stop offset="1" stop-color="#C9973A"/>
+    </linearGradient>
+    <filter id="sombraIzq" x="-10%" y="-5%" width="120%" height="110%">
+      <feDropShadow dx="6" dy="0" stdDeviation="8" flood-color="#3B302A" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- tela principal -->
+  <path d="M0 0h420v760H0Z" fill="url(#telaRojaIzq)"/>
+
+  <!-- pliegues verticales -->
+  <g stroke="rgba(0,0,0,0.18)" stroke-width="3" fill="none" opacity="0.9">
+    <path d="M38 0c-6 120 4 260 -2 400 -4 120 -6 240 2 360"/>
+    <path d="M92 0c4 130 -6 270 2 410 6 120 8 230 -2 350"/>
+    <path d="M150 0c-4 125 6 265 -2 405 -4 125 -6 235 2 355"/>
+    <path d="M210 0c4 130 -6 270 2 410 6 120 8 230 -2 350"/>
+    <path d="M272 0c-4 125 6 265 -2 405 -4 125 -6 235 2 355"/>
+    <path d="M332 0c4 130 -6 270 2 410 6 120 8 230 -2 350"/>
+    <path d="M388 0c-4 125 6 265 -2 405 -4 125 -6 235 2 355"/>
+  </g>
+
+  <!-- brillos suaves -->
+  <g fill="rgba(255,255,255,0.06)">
+    <path d="M14 0h24v760H14Z"/>
+    <path d="M120 0h18v760H120Z"/>
+    <path d="M250 0h16v760H250Z"/>
+    <path d="M360 0h14v760H360Z"/>
+  </g>
+
+  <!-- borla dorada en la esquina inferior derecha -->
+  <g transform="translate(360 700)" filter="url(#sombraIzq)">
+    <ellipse cx="0" cy="0" rx="34" ry="26" fill="url(#borlaIzq)" stroke="#3B302A" stroke-width="4"/>
+    <ellipse cx="0" cy="-6" rx="22" ry="14" fill="#F2C96B" stroke="#3B302A" stroke-width="3"/>
+    <circle cx="0" cy="-10" r="6" fill="#FFFDF8" stroke="#3B302A" stroke-width="3"/>
+    <g stroke="#C9973A" stroke-width="2.5" stroke-linecap="round">
+      <path d="M-26 18l-4 40"/>
+      <path d="M-16 22l-2 42"/>
+      <path d="M-6 24l0 44"/>
+      <path d="M6 24l2 44"/>
+      <path d="M16 22l4 42"/>
+      <path d="M26 18l6 40"/>
+    </g>
+  </g>
+
+  <!-- borde superior dorado -->
+  <rect x="0" y="0" width="420" height="14" fill="#C9973A" opacity="0.9"/>
+  <rect x="0" y="0" width="420" height="6" fill="#F2C96B" opacity="0.7"/>
+</svg>

@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750" role="img" aria-label="Lámina para colorear: una manta andina con franjas y figuras geométricas">
+  <g fill="#FFFDF8" stroke="#3B302A" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+    <!-- fondo -->
+    <rect data-region="fondo" x="20" y="20" width="960" height="710" rx="24"/>
+
+    <!-- sol -->
+    <circle data-region="sol" cx="108" cy="112" r="46"/>
+    <g data-region="rayo-1" transform="rotate(0 108 112)"><path d="M98 58 118 58 108 26Z"/></g>
+    <g data-region="rayo-2" transform="rotate(45 108 112)"><path d="M98 58 118 58 108 26Z"/></g>
+    <g data-region="rayo-3" transform="rotate(90 108 112)"><path d="M98 58 118 58 108 26Z"/></g>
+    <g data-region="rayo-4" transform="rotate(135 108 112)"><path d="M98 58 118 58 108 26Z"/></g>
+    <g data-region="rayo-5" transform="rotate(180 108 112)"><path d="M98 58 118 58 108 26Z"/></g>
+    <g data-region="rayo-6" transform="rotate(225 108 112)"><path d="M98 58 118 58 108 26Z"/></g>
+    <g data-region="rayo-7" transform="rotate(270 108 112)"><path d="M98 58 118 58 108 26Z"/></g>
+    <g data-region="rayo-8" transform="rotate(315 108 112)"><path d="M98 58 118 58 108 26Z"/></g>
+
+    <!-- aves -->
+    <path data-region="ave-1" d="M814 92c10-18 32-22 48-10 12 10 8 28-6 36-10 6-24 4-30-4-10 4-18-2-16-10 1-6 3-8 4-12Z"/>
+    <path data-region="ave-2" d="M884 136c7-12 22-15 33-7 8 7 5 19-4 24-7 4-16 3-20-3-7 3-12-1-11-7 0-4 1-5 2-7Z"/>
+
+    <!-- flores esquinas -->
+    <g>
+      <path data-region="flor-izq-tallo" d="M78 708c0-28 4-48 10-62"/>
+      <path data-region="flor-izq-hoja" d="M84 676c-16-10-30-4-36 8 14 10 28 6 36-8Z"/>
+      <g data-region="flor-izq-petalo1"><ellipse cx="84" cy="612" rx="14" ry="22"/></g>
+      <g data-region="flor-izq-petalo2"><ellipse cx="108" cy="622" rx="14" ry="22" transform="rotate(72 108 622)"/></g>
+      <g data-region="flor-izq-petalo3"><ellipse cx="99" cy="646" rx="14" ry="22" transform="rotate(144 99 646)"/></g>
+      <g data-region="flor-izq-petalo4"><ellipse cx="69" cy="646" rx="14" ry="22" transform="rotate(216 69 646)"/></g>
+      <g data-region="flor-izq-petalo5"><ellipse cx="60" cy="622" rx="14" ry="22" transform="rotate(288 60 622)"/></g>
+      <circle data-region="flor-izq-centro" cx="84" cy="630" r="13"/>
+    </g>
+    <g>
+      <path data-region="flor-der-tallo" d="M922 710c0-24 4-42 10-54"/>
+      <path data-region="flor-der-hoja" d="M928 682c14-10 28-6 34 6-12 10-26 6-34-6Z"/>
+      <g data-region="flor-der-petalo1"><ellipse cx="928" cy="624" rx="13" ry="20"/></g>
+      <g data-region="flor-der-petalo2"><ellipse cx="950" cy="633" rx="13" ry="20" transform="rotate(72 950 633)"/></g>
+      <g data-region="flor-der-petalo3"><ellipse cx="942" cy="655" rx="13" ry="20" transform="rotate(144 942 655)"/></g>
+      <g data-region="flor-der-petalo4"><ellipse cx="914" cy="655" rx="13" ry="20" transform="rotate(216 914 655)"/></g>
+      <g data-region="flor-der-petalo5"><ellipse cx="906" cy="633" rx="13" ry="20" transform="rotate(288 906 633)"/></g>
+      <circle data-region="flor-der-centro" cx="928" cy="641" r="12"/>
+    </g>
+
+    <!-- varal y cuerdas -->
+    <path d="M186 84h628" fill="none" stroke-width="10"/>
+    <path d="M180 84c-10 0-16 8-14 18 2 9 10 14 18 12M820 84c10 0 16 8 14 18-2 9-10 14-18 12" fill="none"/>
+    <path d="M262 92v44M738 92v44" fill="none" stroke-width="5"/>
+
+    <!-- manta -->
+    <rect data-region="manta" x="180" y="128" width="640" height="502" rx="10"/>
+    <rect data-region="borde-superior" x="196" y="144" width="608" height="32" rx="4"/>
+    <rect data-region="borde-inferior" x="196" y="582" width="608" height="32" rx="4"/>
+    <rect data-region="borde-izquierdo" x="196" y="176" width="32" height="406" rx="4"/>
+    <rect data-region="borde-derecho" x="772" y="176" width="32" height="406" rx="4"/>
+
+    <!-- campo interior -->
+    <rect data-region="campo" x="228" y="176" width="544" height="406"/>
+
+    <!-- franjas -->
+    <rect data-region="franja-1" x="228" y="184" width="544" height="74"/>
+    <rect data-region="franja-2" x="228" y="262" width="544" height="74"/>
+    <rect data-region="franja-3" x="228" y="340" width="544" height="74"/>
+    <rect data-region="franja-4" x="228" y="418" width="544" height="74"/>
+    <rect data-region="franja-5" x="228" y="496" width="544" height="80"/>
+
+    <!-- figuras franja 1 -->
+    <path data-region="f1-diamante-1" d="M300 190 338 221 300 252 262 221Z"/>
+    <path data-region="f1-diamante-2" d="M500 190 538 221 500 252 462 221Z"/>
+    <path data-region="f1-diamante-3" d="M700 190 738 221 700 252 662 221Z"/>
+
+    <!-- figuras franja 2 -->
+    <path data-region="f2-diamante-1" d="M300 268 338 299 300 330 262 299Z"/>
+    <path data-region="f2-diamante-2" d="M500 268 538 299 500 330 462 299Z"/>
+    <path data-region="f2-diamante-3" d="M700 268 738 299 700 330 662 299Z"/>
+
+    <!-- medallón central franja 3 -->
+    <path data-region="f3-medallon" d="M500 342 582 377 500 412 418 377Z"/>
+    <path data-region="f3-medallon-interior" d="M500 358 550 377 500 396 450 377Z"/>
+    <path data-region="f3-diamante-izq" d="M322 356 352 377 322 398 292 377Z"/>
+    <path data-region="f3-diamante-der" d="M678 356 708 377 678 398 648 377Z"/>
+
+    <!-- figuras franja 4 -->
+    <path data-region="f4-diamante-1" d="M300 424 338 455 300 486 262 455Z"/>
+    <path data-region="f4-diamante-2" d="M500 424 538 455 500 486 462 455Z"/>
+    <path data-region="f4-diamante-3" d="M700 424 738 455 700 486 662 455Z"/>
+
+    <!-- figuras franja 5 -->
+    <path data-region="f5-diamante-1" d="M300 504 338 536 300 568 262 536Z"/>
+    <path data-region="f5-diamante-2" d="M500 504 538 536 500 568 462 536Z"/>
+    <path data-region="f5-diamante-3" d="M700 504 738 536 700 568 662 536Z"/>
+
+    <!-- franjas decorativas -->
+    <path d="M228 258h544M228 336h544M228 414h544M228 492h544" fill="none" stroke-width="5"/>
+
+    <!-- flecos -->
+    <g data-region="flecos">
+      <rect x="210" y="630" width="18" height="58" rx="9"/>
+      <rect x="256" y="630" width="18" height="58" rx="9"/>
+      <rect x="302" y="630" width="18" height="58" rx="9"/>
+      <rect x="348" y="630" width="18" height="58" rx="9"/>
+      <rect x="394" y="630" width="18" height="58" rx="9"/>
+      <rect x="440" y="630" width="18" height="58" rx="9"/>
+      <rect x="486" y="630" width="18" height="58" rx="9"/>
+      <rect x="532" y="630" width="18" height="58" rx="9"/>
+      <rect x="578" y="630" width="18" height="58" rx="9"/>
+      <rect x="624" y="630" width="18" height="58" rx="9"/>
+      <rect x="670" y="630" width="18" height="58" rx="9"/>
+      <rect x="716" y="630" width="18" height="58" rx="9"/>
+      <rect x="762" y="630" width="18" height="58" rx="9"/>
+    </g>
+  </g>
+</svg>

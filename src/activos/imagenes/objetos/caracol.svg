@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Caracol con caparazón en espiral">
+  <ellipse cx="82" cy="136" rx="48" ry="10" fill="#3B302A" opacity=".15"/>
+  <path d="M30 122c-8-14 0-28 16-30h44c10 0 16 8 16 18 0 12-10 20-24 20H48c-8 0-14-3-18-8Z" fill="#8FA98F" stroke="#3B302A" stroke-width="6"/>
+  <path d="M34 96c-8-4-10-12-4-18 6-6 14-4 18 4" fill="#8FA98F" stroke="#3B302A" stroke-width="4"/>
+  <path d="M36 82c-2-14 2-24 10-30M54 82c0-12 4-20 11-26" fill="none" stroke="#3B302A" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="45" cy="48" r="7" fill="#FBF3E4" stroke="#3B302A" stroke-width="4"/>
+  <circle cx="65" cy="52" r="7" fill="#FBF3E4" stroke="#3B302A" stroke-width="4"/>
+  <circle cx="45" cy="48" r="2.5" fill="#3B302A"/>
+  <circle cx="65" cy="52" r="2.5" fill="#3B302A"/>
+  <circle cx="86" cy="88" r="42" fill="#E9B44C" stroke="#3B302A" stroke-width="6"/>
+  <path d="M86 52c20 0 36 16 36 36s-16 36-36 36-36-16-36-36c0-14 8-26 20-32" fill="none" stroke="#D97757" stroke-width="8" stroke-linecap="round"/>
+  <path d="M86 66c13 0 24 10 24 22s-10 22-24 22-24-10-24-22c0-8 4-15 11-19" fill="none" stroke="#3B302A" stroke-width="5" stroke-linecap="round"/>
+  <path d="M86 84c6 0 10 4 10 9s-4 9-10 9" fill="none" stroke="#3B302A" stroke-width="4" stroke-linecap="round"/>
+  <path d="M62 104c8 6 18 8 28 6" fill="none" stroke="#FFF3C4" stroke-width="5" stroke-linecap="round" opacity=".7"/>
+</svg>

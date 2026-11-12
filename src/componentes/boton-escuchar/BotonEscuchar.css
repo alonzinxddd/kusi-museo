@@ -1,0 +1,23 @@
+.boton-escuchar {
+  position: relative;
+}
+
+.boton-escuchar--activo {
+  background: var(--crema-hondo);
+  border-color: rgba(217, 119, 87, 0.45);
+  color: var(--terracota-oscuro);
+}
+
+.boton-escuchar--activo::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: inherit;
+  border: 2px solid rgba(217, 119, 87, 0.35);
+  animation: onda 1.6s ease-out infinite;
+  pointer-events: none;
+}
+
+.boton-escuchar svg {
+  flex-shrink: 0;
+}

@@ -1,0 +1,139 @@
+.tarjeta-planta {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--radio-md);
+  background: var(--papel);
+  border: 1.5px solid rgba(59, 48, 42, 0.1);
+  box-shadow: var(--sombra-baja);
+  transition:
+    transform var(--transicion),
+    box-shadow var(--transicion),
+    border-color var(--transicion);
+}
+
+.tarjeta-planta:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-planta);
+  box-shadow: var(--sombra-media);
+}
+
+.tarjeta-planta__imagen {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--color-suave-planta);
+}
+
+.tarjeta-planta__imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transicion-lenta);
+}
+
+.tarjeta-planta:hover .tarjeta-planta__imagen img {
+  transform: scale(1.05);
+}
+
+.tarjeta-planta__ubicacion {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: var(--radio-pildora);
+  background: rgba(255, 253, 248, 0.92);
+  color: var(--color-planta);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  box-shadow: var(--sombra-baja);
+}
+
+.tarjeta-planta__ubicacion svg {
+  flex-shrink: 0;
+}
+
+.tarjeta-planta__cuerpo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 18px 18px;
+  flex: 1;
+}
+
+.tarjeta-planta__nombre {
+  font-family: var(--fuente-titulos);
+  font-size: 1.22rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--tinta);
+}
+
+.tarjeta-planta__descripcion {
+  color: var(--tinta-suave);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.tarjeta-planta__error {
+  color: var(--terracota-oscuro);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.tarjeta-planta__acciones {
+  margin-top: auto;
+  padding-top: 10px;
+}
+
+.tarjeta-planta__boton {
+  width: 100%;
+  justify-content: flex-start;
+  gap: 8px;
+  min-height: 42px;
+  padding: 9px 14px;
+  font-size: 0.86rem;
+  border-radius: var(--radio-sm);
+  background: var(--color-suave-planta);
+  border-color: color-mix(in srgb, var(--color-planta) 35%, transparent);
+  color: color-mix(in srgb, var(--color-planta) 80%, #3b302a);
+}
+
+.tarjeta-planta__boton:hover:not(:disabled) {
+  background: var(--color-planta);
+  color: #fffdf8;
+  border-color: var(--color-planta);
+}
+
+.tarjeta-planta__boton--activo {
+  background: var(--color-planta) !important;
+  color: #fffdf8 !important;
+  border-color: var(--color-planta) !important;
+}
+
+.tarjeta-planta__boton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tarjeta-planta__boton svg {
+  flex-shrink: 0;
+}
+
+@media (max-width: 520px) {
+  .tarjeta-planta__boton {
+    justify-content: center;
+    padding: 8px 10px;
+    font-size: 0.8rem;
+  }
+
+  .tarjeta-planta__boton span {
+    display: none;
+  }
+}

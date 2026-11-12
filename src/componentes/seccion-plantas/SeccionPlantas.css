@@ -1,0 +1,123 @@
+.seccion-plantas {
+  margin-top: clamp(34px, 5vw, 56px);
+  padding-top: clamp(22px, 3vw, 30px);
+  border-top: 1px dashed rgba(59, 48, 42, 0.16);
+}
+
+.seccion-plantas__regiones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.seccion-plantas__region {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 12px;
+  border-radius: var(--radio-md);
+  background: var(--papel);
+  border: 1.5px solid rgba(59, 48, 42, 0.1);
+  box-shadow: var(--sombra-baja);
+  color: var(--tinta);
+  transition:
+    transform var(--transicion),
+    box-shadow var(--transicion),
+    border-color var(--transicion),
+    background-color var(--transicion);
+}
+
+.seccion-plantas__region:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-region);
+  box-shadow: var(--sombra-media);
+}
+
+.seccion-plantas__region--activa {
+  background: var(--color-suave-region);
+  border-color: var(--color-region);
+  box-shadow:
+    0 0 0 3px color-mix(in srgb, var(--color-region) 25%, transparent),
+    var(--sombra-baja);
+}
+
+.seccion-plantas__region-icono {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-suave-region);
+  color: var(--color-region);
+}
+
+.seccion-plantas__region--activa .seccion-plantas__region-icono {
+  background: var(--color-region);
+  color: #fffdf8;
+}
+
+.seccion-plantas__region-nombre {
+  font-family: var(--fuente-titulos);
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.seccion-plantas__region-pista {
+  color: var(--tinta-suave);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.seccion-plantas__region-activa {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 16px;
+  padding: 6px 12px;
+  border-radius: var(--radio-pildora);
+  background: rgba(255, 253, 248, 0.8);
+  color: var(--tinta-suave);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.seccion-plantas__region-activa svg {
+  color: var(--salvia-oscuro);
+}
+
+.seccion-plantas__grilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: clamp(14px, 2vw, 22px);
+}
+
+.seccion-plantas__nota {
+  margin-top: 18px;
+  color: var(--tinta-suave);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+.seccion-plantas__nota code {
+  padding: 1px 6px;
+  border-radius: 6px;
+  background: rgba(59, 48, 42, 0.06);
+  font-size: 0.76rem;
+  color: var(--salvia-oscuro);
+}
+
+@media (max-width: 620px) {
+  .seccion-plantas__regiones {
+    grid-template-columns: 1fr;
+  }
+
+  .seccion-plantas__region {
+    flex-direction: row;
+    justify-content: center;
+  }
+}

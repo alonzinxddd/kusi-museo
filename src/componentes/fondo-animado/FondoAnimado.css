@@ -1,0 +1,86 @@
+.fondo-animado {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.fondo-animado__forma {
+  position: absolute;
+  border-radius: 46% 54% 58% 42% / 52% 44% 56% 48%;
+  opacity: 0.5;
+  filter: blur(1px);
+  animation: flotar 14s ease-in-out infinite;
+}
+
+.fondo-animado__forma--1 {
+  top: 12%;
+  left: -90px;
+  width: 230px;
+  height: 230px;
+  background: radial-gradient(circle at 35% 30%, rgba(233, 180, 76, 0.22), rgba(233, 180, 76, 0.05));
+}
+
+.fondo-animado__forma--2 {
+  top: 42%;
+  right: -110px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle at 40% 35%, rgba(143, 169, 143, 0.22), rgba(143, 169, 143, 0.04));
+  animation-delay: -4s;
+}
+
+.fondo-animado__forma--3 {
+  bottom: 6%;
+  left: 12%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle at 40% 35%, rgba(232, 165, 152, 0.18), rgba(232, 165, 152, 0.03));
+  animation-delay: -7s;
+}
+
+.fondo-animado__forma--4 {
+  top: 8%;
+  right: 18%;
+  width: 130px;
+  height: 130px;
+  background: radial-gradient(circle at 40% 35%, rgba(169, 198, 201, 0.2), rgba(169, 198, 201, 0.03));
+  animation-delay: -2s;
+}
+
+.fondo-animado__punto {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--mostaza);
+  opacity: 0.35;
+  animation: destello 5s ease-in-out infinite;
+}
+
+.fondo-animado__punto--1 {
+  top: 24%;
+  left: 7%;
+}
+
+.fondo-animado__punto--2 {
+  top: 64%;
+  right: 9%;
+  animation-delay: -1.8s;
+  background: var(--salvia);
+}
+
+.fondo-animado__punto--3 {
+  bottom: 18%;
+  left: 46%;
+  animation-delay: -3.2s;
+  background: var(--coral);
+}
+
+@media (max-width: 720px) {
+  .fondo-animado__forma--1,
+  .fondo-animado__forma--4 {
+    display: none;
+  }
+}

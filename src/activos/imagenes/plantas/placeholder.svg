@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Planta">
+  <rect width="240" height="240" rx="28" fill="#E2EBDD"/>
+  <g transform="translate(120 132)">
+    <ellipse cx="0" cy="62" rx="46" ry="12" fill="#B98A63" opacity=".45"/>
+    <path d="M0 62c0-40 2-72 8-96" fill="none" stroke="#5F7A63" stroke-width="8" stroke-linecap="round"/>
+    <path d="M8 -34c-26-18-46-10-56 8 22 16 44 12 56-8Z" fill="#8FA98F" stroke="#3B302A" stroke-width="4"/>
+    <path d="M8 -34c24-22 48-16 58 4-20 18-42 16-58-4Z" fill="#A9C0A4" stroke="#3B302A" stroke-width="4"/>
+    <path d="M6 -68c-18-14-34-8-42 6 16 12 32 8 42-6Z" fill="#6E8A70" stroke="#3B302A" stroke-width="4"/>
+    <circle cx="8" cy="-74" r="16" fill="#E9B44C" stroke="#3B302A" stroke-width="4"/>
+    <circle cx="4" cy="-77" r="2" fill="#3B302A"/>
+    <circle cx="12" cy="-77" r="2" fill="#3B302A"/>
+    <path d="M3 -70c3 3 8 3 11 0" fill="none" stroke="#3B302A" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M-14 62h28" stroke="#8A6552" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <text x="120" y="218" text-anchor="middle" font-family="Nunito, sans-serif" font-size="16" font-weight="700" fill="#5f7a63">Tu planta aquí</text>
+</svg>
