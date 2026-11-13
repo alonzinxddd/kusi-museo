@@ -15,7 +15,7 @@ export const salas = [
     nombre: 'Animales de la región',
     nombreCorto: 'Animales',
     lema: 'Patas, plumas y sorpresas',
-    descripcion: 'Una llama, un oso de anteojos y un tucán te esperan entre las nubes.',
+    descripcion: 'Un burrito, una vaca lechera y animales de la granja te esperan entre algarrobales.',
     descripcionLarga:
       'En esta sala conocerás animales que viven en nuestra región Piura. Mira sus formas, escucha sus historias y descubre por qué son tan especiales.',
     color: '#D97757',
@@ -34,7 +34,7 @@ export const salas = [
     lema: 'Crecer con paciencia',
     descripcion: 'Flores, hojas y semillas que crecen despacito, con agua y cariño.',
     descripcionLarga:
-      'Las plantas son vecinas muy importantes. En esta sala verás cantutas, maíz, cacao y helechos. También podrás pintar un jardín y escuchar un cuento sobre una semilla.',
+      'Las plantas son vecinas muy importantes. En esta sala verás cantutas, Algarrobo, Quinua y Orquídeas. También podrás pintar un jardín y escuchar un cuento sobre una semilla.',
     color: '#6E8A70',
     colorSuave: '#E2EBDD',
     imagen: plantas,
@@ -51,12 +51,12 @@ export const salas = [
     lema: 'Un mundo de tonos',
     descripcion: 'Telares, pinceles y mezclas para imaginar sin miedo a equivocarse.',
     descripcionLarga:
-      'Los colores pueden contar historias. Aquí encontrarás un caballete, pinturas y un telar andino. Elige tus tonos favoritos y crea algo que sea muy tuyo.',
+      'Bajo el sol de Piura, los colores cuentan historias. Aquí encontrarás un caballete, pinturas y un telar de Catacaos. Elige tus tonos favoritos como el amarillo del algarrobo o el azul del mar de Paita y crea algo que sea muy tuyo.',
     color: '#D97757',
     colorSuave: '#FAE5D4',
     imagen: colores,
     sabiasQue:
-      'Muchos telares andinos cuentan historias con figuras y colores. Cada comunidad tiene sus propios diseños.',
+      'Muchos telares de Catacaos y el Bajo Piura cuentan historias con figuras y colores de nuestra tierra. Cada comunidad tiene sus propios diseños llenos de tradición.',
     pregunta: '¿Cuál es tu color favorito y por qué?',
     bienvenida:
       'Hola, soy Kusi. Esta sala está llena de colores. No hay una forma correcta de pintar: tu forma es la mejor.',
