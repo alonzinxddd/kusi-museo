@@ -144,8 +144,32 @@
 }
 
 @media (max-width: 620px) {
+  .hero {
+    padding-block: 16px 24px;
+  }
+
+  .hero__contenido {
+    gap: 18px;
+  }
+
+  .cortinas {
+    width: 100%;
+    max-width: 100%;
+    max-height: 62vh;
+    border-width: 2px;
+    border-radius: var(--radio-md);
+  }
+
+  .cortinas__fondo {
+    max-height: 62vh;
+  }
+
   .cortinas__invitacion-texto {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+  }
+
+  .cortinas__serpentina {
+    width: 8px;
   }
 }
 

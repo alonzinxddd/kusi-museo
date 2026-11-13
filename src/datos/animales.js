@@ -3,7 +3,7 @@ const imagenes = import.meta.glob('../activos/imagenes/animales/*.{svg,png,jpg,j
   import: 'default',
 })
 
-const audiosSonido = import.meta.glob('../activos/audios/sonido/*.{wav,mp3,ogg}', {
+const audiosSonido = import.meta.glob('../activos/audios/sonido/*.{wav,mp3,MP3,ogg}', {
   eager: true,
   query: '?url',
   import: 'default',
