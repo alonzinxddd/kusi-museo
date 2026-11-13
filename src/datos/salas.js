@@ -17,15 +17,15 @@ export const salas = [
     lema: 'Patas, plumas y sorpresas',
     descripcion: 'Una llama, un oso de anteojos y un tucán te esperan entre las nubes.',
     descripcionLarga:
-      'En esta sala conocerás animales que viven en los Andes y la Amazonía. Mira sus formas, escucha sus historias y descubre por qué son tan especiales.',
+      'En esta sala conocerás animales que viven en nuestra región Piura. Mira sus formas, escucha sus historias y descubre por qué son tan especiales.',
     color: '#D97757',
     colorSuave: '#F8E1D5',
     imagen: animales,
     sabiasQue:
-      'El oso de anteojos es el único oso de Sudamérica y vive en los bosques nublados de los Andes.',
+      'El caballo peruano de paso vive en los campos de Piura y es famoso porque camina bailando de lado a lado con mucha elegancia.',
     pregunta: '¿Qué animal te gustaría ver de cerca?',
     bienvenida:
-      'Hola, soy Kusi. Esta es la sala de los animales. Mira con calma y elige un juego. Aquí no hay prisa.',
+      'Hola, soy Kusi. En esta sala conocerás animales que viven en nuestra región Piura. Mira sus formas, escucha sus historias y descubre por qué son tan especiales.',
   },
   {
     id: 'plantas',

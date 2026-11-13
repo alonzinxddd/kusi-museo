@@ -1,3 +1,34 @@
+const imagenes = import.meta.glob('../activos/imagenes/animales/*.{svg,png,jpg,jpeg,webp}', {
+  eager: true,
+  import: 'default',
+})
+
+const audiosSonido = import.meta.glob('../activos/audios/sonido/*.{wav,mp3,ogg}', {
+  eager: true,
+  query: '?url',
+  import: 'default',
+})
+
+// Obtiene un placeholder seguro si existe
+const placeholder = Object.values(imagenes)[0]
+
+function buscarImagen(id) {
+  const clave = Object.keys(imagenes).find((ruta) => {
+    const nombre = ruta.split('/').pop().replace(/\.[^.]+$/, '').toLowerCase()
+    // Coincide si el nombre del archivo contiene el id o viceversa (ej: 'gato' con 'gato.png')
+    return nombre === id.toLowerCase() || id.toLowerCase().includes(nombre)
+  })
+  return clave ? imagenes[clave] : placeholder
+}
+
+function buscarAudio(id) {
+  const clave = Object.keys(audiosSonido).find((ruta) => {
+    const nombre = ruta.split('/').pop().replace(/\.[^.]+$/, '').toLowerCase()
+    return nombre === id.toLowerCase()
+  })
+  return clave ? audiosSonido[clave] : null
+}
+
 export const animales = [
   {
     id: 'gato',
@@ -92,10 +123,8 @@ export const animales = [
 export function enriquecerAnimal(animal) {
   return {
     ...animal,
-    // Construye la ruta automáticamente usando el ID y las carpetas limpias
-    imagen: `/src/activos/imagenes/animales/${animal.id}.png`,
-    sonido: `/src/activos/audios/sonido/${animal.id}.mp3`,
-    descripcionAudio: `/src/activos/audios/descripcion/${animal.id}.mp3`,
+    imagen: animal.imagen || buscarImagen(animal.id),
+    sonido: animal.sonido || buscarAudio(animal.id),
   }
 }
 
