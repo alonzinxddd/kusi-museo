@@ -35,6 +35,9 @@ export function Rompecabezas() {
   const { completarActividad } = useProgreso()
   const { reproducir } = useSonido()
 
+  const [imagenSeleccionada, setImagenSeleccionada] = useState(
+    config?.imagenesDisponibles ? config.imagenesDisponibles[0].imagen : config?.imagen
+  )
   const [lado, setLado] = useState(config?.piezasIniciales === 9 ? 3 : 2)
   const [orden, setOrden] = useState(() => crearOrden(config?.piezasIniciales === 9 ? 3 : 2))
   const [seleccion, setSeleccion] = useState(null)
@@ -52,6 +55,12 @@ export function Rompecabezas() {
     setResuelto(false)
     completadoRef.current = false
   }, [lado])
+
+  const cambiarImagen = (img) => {
+    if (img === imagenSeleccionada) return
+    setImagenSeleccionada(img)
+    reiniciar()
+  }
 
   const cambiarDificultad = (nuevoLado) => {
     if (nuevoLado === lado) return
@@ -113,13 +122,13 @@ export function Rompecabezas() {
         columna,
         fila,
         estilo: {
-          backgroundImage: `url(${config.imagen})`,
+          backgroundImage: `url(${imagenSeleccionada || config.imagen})`,
           backgroundSize: `${lado * 100}% ${lado * 100}%`,
           backgroundPosition: `${(columna / (lado - 1)) * 100}% ${(fila / (lado - 1)) * 100}%`,
         },
       }
     })
-  }, [orden, lado, config])
+  }, [orden, lado, config, imagenSeleccionada])
 
   if (!config || !sala || config.salaId !== sala.id) {
     return (
@@ -147,6 +156,25 @@ export function Rompecabezas() {
       }
     >
       <div className="rompecabezas__barra">
+        {config.imagenesDisponibles && config.imagenesDisponibles.length > 1 && (
+          <div className="rompecabezas__selector-imagen" role="group" aria-label="Elegir dibujo para armar">
+            <span>Dibujo:</span>
+            {config.imagenesDisponibles.map((item) => (
+              <button
+                key={item.id}
+                type="button"
+                className={`boton boton--pequeno ${
+                  imagenSeleccionada === item.imagen ? 'boton--primario' : 'boton--secundario'
+                }`}
+                onClick={() => cambiarImagen(item.imagen)}
+                aria-pressed={imagenSeleccionada === item.imagen}
+              >
+                {item.nombre}
+              </button>
+            ))}
+          </div>
+        )}
+
         <div className="rompecabezas__dificultad" role="group" aria-label="Cantidad de piezas">
           <span>Piezas:</span>
           <button
@@ -222,7 +250,7 @@ export function Rompecabezas() {
               <Puzzle size={18} strokeWidth={2.1} aria-hidden="true" />
               Imagen completa
             </h2>
-            <img src={config.imagen} alt={`Guía del rompecabezas: ${config.nombre}`} />
+            <img src={imagenSeleccionada || config.imagen} alt={`Guía del rompecabezas: ${config.nombre}`} />
             <p>Mira las formas y los colores para descubrir dónde va cada pieza.</p>
           </aside>
         )}

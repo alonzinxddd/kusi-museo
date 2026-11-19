@@ -1,13 +1,14 @@
 import animales from '../activos/imagenes/salas/animales.png'
-import plantas from '../activos/imagenes/salas/plantas.png'
 import colores from '../activos/imagenes/salas/colores.png'
 import sonidos from '../activos/imagenes/salas/sonidos.png'
-import cuerpoHumano from '../activos/imagenes/salas/cuerpo-humano.png'
-
+import cultura from '../activos/imagenes/salas/cultura.png'
 /**
  * Cada sala es una entrada del museo.
- * Si se agrega una sala nueva, también hay que añadirla en este arreglo
- * y crear sus actividades en `datos/actividades.js`.
+ * Salas actuales:
+ *  - animales: Animales de la región
+ *  - colores: Sala de Arte y Colores (Pinturas, Videos y Colores)
+ *  - cultura: Cultura y Tradiciones (Danzas típicas del Perú y Fiestas tradicionales)
+ *  - sonidos: Sonidos y música
  */
 export const salas = [
   {
@@ -28,38 +29,38 @@ export const salas = [
       'Hola, soy Kusi. En esta sala conocerás animales que viven en nuestra región Piura. Mira sus formas, escucha sus historias y descubre por qué son tan especiales.',
   },
   {
-    id: 'plantas',
-    nombre: 'Plantas y semillas',
-    nombreCorto: 'Plantas',
-    lema: 'Crecer con paciencia',
-    descripcion: 'Flores, hojas y semillas que crecen despacito, con agua y cariño.',
-    descripcionLarga:
-      'Las plantas son vecinas muy importantes. En esta sala verás cantutas, Algarrobo, Quinua y Orquídeas. También podrás pintar un jardín y escuchar un cuento sobre una semilla.',
-    color: '#6E8A70',
-    colorSuave: '#E2EBDD',
-    imagen: plantas,
-    sabiasQue:
-      'La cantuta es la flor nacional del Perú. Crece en los Andes y sus flores pueden ser rojas, rosadas o amarillas.',
-    pregunta: '¿Qué semilla te gustaría plantar?',
-    bienvenida:
-      'Hola, soy Kusi. Bienvenido a la sala de las plantas. Respira suave y mira cuántos verdes diferentes hay.',
-  },
-  {
     id: 'colores',
-    nombre: 'Colores y telares',
-    nombreCorto: 'Colores',
-    lema: 'Un mundo de tonos',
-    descripcion: 'Telares, pinceles y mezclas para imaginar sin miedo a equivocarse.',
+    nombre: 'Sala de Arte',
+    nombreCorto: 'Arte',
+    lema: 'Pinturas, vídeos y colores mágicos',
+    descripcion: 'Pinturas, vídeos de arte, caballete y mezclas para imaginar y crear sin límites.',
     descripcionLarga:
-      'Bajo el sol de Piura, los colores cuentan historias. Aquí encontrarás un caballete, pinturas y un telar de Catacaos. Elige tus tonos favoritos como el amarillo del algarrobo o el azul del mar de Paita y crea algo que sea muy tuyo.',
+      'El arte nos ayuda a sentir y expresar lo que llevamos en el corazón. Aquí descubrirás hermosas pinturas, vídeos de arte para aprender técnicas divertidas y un rincón de colores para experimentar.',
     color: '#D97757',
     colorSuave: '#FAE5D4',
     imagen: colores,
     sabiasQue:
-      'Muchos telares de Catacaos y el Bajo Piura cuentan historias con figuras y colores de nuestra tierra. Cada comunidad tiene sus propios diseños llenos de tradición.',
-    pregunta: '¿Cuál es tu color favorito y por qué?',
+      'Muchos artistas usan los colores de la naturaleza para pintar: tierras rojas, flores amarillas y hojas verdes como pigmentos.',
+    pregunta: '¿Qué colores usarías para pintar cómo te sientes hoy?',
     bienvenida:
-      'Hola, soy Kusi. Esta sala está llena de colores. No hay una forma correcta de pintar: tu forma es la mejor.',
+      'Hola, soy Kusi. ¡Bienvenido a la Sala de Arte! Mira las pinturas, disfruta los vídeos y deja volar tu imaginación con los colores.',
+  },
+  {
+    id: 'cultura',
+    nombre: 'Cultura y Tradiciones',
+    nombreCorto: 'cultura',
+    lema: 'Danzas y fiestas de nuestra tierra',
+    descripcion: 'Danzas típicas del Perú, trajes festivos y las fiestas tradicionales más hermosas.',
+    descripcionLarga:
+      'El Perú es un país lleno de ritmos, colores y celebraciones mágicas. En esta sala podrás descubrir danzas típicas de la costa, sierra y selva, y revivir nuestras fiestas tradicionales.',
+    color: '#B07D3E',
+    colorSuave: '#F6E4C6',
+    imagen: cultura,
+    sabiasQue:
+      'En la marinera y el tondero, el pañuelo blanco en la mano representa elegancia y respeto, mientras que los pies descalzos sienten la calidez de la tierra.',
+    pregunta: '¿Cuál es la fiesta o danza que más te gusta celebrar en familia?',
+    bienvenida:
+      'Hola, soy Kusi. Te invito a celebrar la riqueza de nuestra cultura peruana. ¡Escucha los ritmos y siente la alegría de nuestras tradiciones!',
   },
   {
     id: 'sonidos',
@@ -68,7 +69,7 @@ export const salas = [
     lema: 'Escuchar con orejas curiosas',
     descripcion: 'Instrumentos, aves y ritmos del bosque para escuchar y jugar.',
     descripcionLarga:
-      'Cierra los ojos por un momento y escucha. En esta sala hay sonidos de la naturaleza y del cuerpo. Puedes tocar cada tarjeta y descubrir cómo suena.',
+      'Cierra los ojos por un momento y escucha. En esta sala hay sonidos de la naturaleza y del bosque. Puedes tocar cada tarjeta y descubrir cómo suena.',
     color: '#3D5A6C',
     colorSuave: '#DDE8E9',
     imagen: sonidos,
@@ -77,23 +78,6 @@ export const salas = [
     pregunta: '¿Qué sonido te gustaría imitar?',
     bienvenida:
       'Hola, soy Kusi. Esta es la sala de los sonidos. Escucha con atención y toca cada tarjeta cuando quieras.',
-  },
-  {
-    id: 'cuerpo-humano',
-    nombre: 'Cuerpo humano',
-    nombreCorto: 'Cuerpo',
-    lema: 'Sentir, respirar, latir',
-    descripcion: 'Sentidos, respiración y latidos que nos acompañan todos los días.',
-    descripcionLarga:
-      'Tu cuerpo es una casita que siente, respira y se mueve. Aquí podrás descubrir los sentidos, hacer sonidos con tu cuerpo y escuchar un cuento para respirar con calma.',
-    color: '#E8A598',
-    colorSuave: '#FBE4DE',
-    imagen: cuerpoHumano,
-    sabiasQue:
-      'Tu corazón late sin descansar, incluso cuando duermes. Puedes sentirlo si pones una mano suave sobre tu pecho.',
-    pregunta: '¿Qué parte de tu cuerpo sientes cuando respiras?',
-    bienvenida:
-      'Hola, soy Kusi. Esta es la sala del cuerpo. Ponte cómodo y respira conmigo. Sin apuro.',
   },
 ]
 

@@ -1,66 +1,71 @@
 import { useRef, useState } from 'react'
 import { Check, Compass, Lightbulb, Search, Sparkles } from 'lucide-react'
 import { Link, useParams } from 'react-router-dom'
-import bosque from '../../activos/imagenes/escenas/bosque-para-tesoro.svg'
-import estrella from '../../activos/imagenes/objetos/estrella.svg'
-import llave from '../../activos/imagenes/objetos/llave.svg'
-import mariposa from '../../activos/imagenes/objetos/mariposa.svg'
-import caracol from '../../activos/imagenes/objetos/caracol.svg'
-import seta from '../../activos/imagenes/objetos/seta.svg'
+import bosque from '../../activos/imagenes/escenas/bosque-para-tesoro.png'
+import perro from '../../activos/imagenes/objetos/perro.png'
+import vaca from '../../activos/imagenes/objetos/vaca.png'
+import paloma from '../../activos/imagenes/objetos/paloma.png'
+import caballo from '../../activos/imagenes/objetos/caballo.png'
+import gato from '../../activos/imagenes/objetos/gato.png'
 import mascota from '../../activos/imagenes/marca/mascota-kusi.svg'
 import { obtenerSala } from '../../datos/salas'
 import { useProgreso } from '../../contextos/ProgresoContexto'
 import { useSonido } from '../../contextos/SonidoContexto'
 import { useTitulo } from '../../utilidades/useTitulo'
 import { MarcoActividad } from '../../componentes/marco-actividad/MarcoActividad'
-import { BotonEscuchar } from '../../componentes/boton-escuchar/BotonEscuchar'
+import { hablar, vozDisponible } from '../../servicios/voz'
 import { NoEncontrada } from '../no-encontrada/NoEncontrada'
 import './Tesoro.css'
 
 const objetos = [
   {
-    id: 'estrella',
-    nombre: 'Estrella dorada',
-    imagen: estrella,
-    x: 15,
+    id: 'perro',
+    nombre: 'perro amistoso',
+    imagen: perro,
+    x: 20,
     y: 81,
-    pista: 'Brilla muy cerca de las piedras grandes, a la izquierda del bosque.',
+    tamano: 140,
+    pista: 'Brilla muy cerca del primer árbol, a la izquierda del bosque.',
     color: '#E9B44C',
   },
   {
-    id: 'llave',
-    nombre: 'Llave antigua',
-    imagen: llave,
+    id: 'vaca',
+    nombre: 'vaca alegre',
+    imagen: vaca,
     x: 86,
     y: 64,
-    pista: 'Descansa junto al árbol alto de la derecha, cerca del agua.',
+    tamano: 180,
+    pista: 'Descansa junto al árbol alto de la derecha, cerca del pasto.',
     color: '#D9A86C',
   },
   {
-    id: 'mariposa',
-    nombre: 'Mariposa',
-    imagen: mariposa,
+    id: 'paloma',
+    nombre: 'paloma voladora',
+    imagen: paloma,
     x: 51,
-    y: 16,
-    pista: 'Vuela alto, entre las hojas y la rama del centro.',
+    y: 8,
+    tamano: 90,
+    pista: 'Vuela alto, entre las hojas y el arbol del centro.',
     color: '#A9C6C9',
   },
   {
-    id: 'caracol',
-    nombre: 'Caracol',
-    imagen: caracol,
-    x: 34,
-    y: 75,
-    pista: 'Se esconde entre las flores del arbusto del centro.',
+    id: 'caballo',
+    nombre: 'caballo elegante',
+    imagen: caballo,
+    x: 44,
+    y: 58,
+    tamano: 200,
+    pista: 'Se esconde entre el perrito amigable y la paloma voladora.',
     color: '#E9B44C',
   },
   {
-    id: 'seta',
-    nombre: 'Seta de lunares',
-    imagen: seta,
-    x: 64,
-    y: 86,
-    pista: 'Crece entre el pasto alto, a la derecha del sendero.',
+    id: 'gato',
+    nombre: 'gato juguetón',
+    imagen: gato,
+    x: 67,
+    y: 80,
+    tamano: 120,
+    pista: 'Cerca de la vaca alegre y cerca del pasto',
     color: '#D97757',
   },
 ]
@@ -99,11 +104,19 @@ export function Tesoro() {
   const pedirPista = () => {
     const siguiente = objetos.find((objeto) => !encontrados.includes(objeto.id))
     if (!siguiente) {
-      setMensaje('¡Ya encontraste todos los objetos! El bosque está muy contento.')
+      const textoFinal = '¡Ya encontraste todos los animales! El bosque está muy contento.'
+      setMensaje(textoFinal)
+      if (vozDisponible()) {
+        hablar(textoFinal)
+      }
       return
     }
     setPista(siguiente.id)
-    setMensaje(`Pista de Kusi: ${siguiente.pista}`)
+    const textoPista = `Pista de Kusi: ${siguiente.pista}`
+    setMensaje(textoPista)
+    if (vozDisponible()) {
+      hablar(siguiente.pista)
+    }
   }
 
   if (!sala || sala.id !== 'animales') {
@@ -125,12 +138,9 @@ export function Tesoro() {
       bienvenida={bienvenida}
       className="tesoro"
       acciones={
-        <>
-          <BotonEscuchar texto={bienvenida} etiqueta="Escuchar pista inicial" variante="secundario" />
-          <Link to={`/salas/${sala.id}`} className="boton boton--fantasma">
-            Volver a la sala
-          </Link>
-        </>
+        <Link to={`/salas/${sala.id}`} className="boton boton--fantasma">
+          Volver a la sala
+        </Link>
       }
     >
       <div className="tesoro__barra">
@@ -166,10 +176,14 @@ export function Tesoro() {
               <button
                 type="button"
                 key={objeto.id}
-                className={`tesoro__objeto${hallado ? ' tesoro__objeto--hallado' : ''}${
-                  pista === objeto.id ? ' tesoro__objeto--pista' : ''
-                }`}
-                style={{ left: `${objeto.x}%`, top: `${objeto.y}%`, '--color-objeto': objeto.color }}
+                className={`tesoro__objeto${hallado ? ' tesoro__objeto--hallado' : ''}${pista === objeto.id ? ' tesoro__objeto--pista' : ''
+                  }`}
+                style={{
+                  left: `${objeto.x}%`,
+                  top: `${objeto.y}%`,
+                  '--color-objeto': objeto.color,
+                  '--tamano-objeto': objeto.tamano ? `${objeto.tamano}px` : undefined,
+                }}
                 onClick={() => encontrar(objeto)}
                 aria-label={hallado ? `${objeto.nombre}, ya encontrado` : `Buscar en este lugar`}
                 aria-pressed={hallado}

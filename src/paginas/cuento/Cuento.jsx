@@ -35,7 +35,7 @@ export function Cuento() {
     return (
       <NoEncontrada
         titulo="Este cuento está en otra sala"
-        mensaje="Los cuentos viven en la sala de plantas, de sonidos y del cuerpo. Vuelve al inicio para encontrar el suyo."
+        mensaje="Los cuentos viven en la sala de cultura y tradiciones o en la de sonidos. Vuelve al inicio para encontrar el suyo."
       />
     )
   }

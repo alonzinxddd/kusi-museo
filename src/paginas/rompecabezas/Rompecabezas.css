@@ -12,6 +12,7 @@
 }
 
 .rompecabezas__dificultad,
+.rompecabezas__selector-imagen,
 .rompecabezas__acciones {
   display: flex;
   flex-wrap: wrap;
@@ -19,7 +20,8 @@
   gap: 8px;
 }
 
-.rompecabezas__dificultad > span {
+.rompecabezas__dificultad > span,
+.rompecabezas__selector-imagen > span {
   color: var(--tinta-suave);
   font-size: 0.84rem;
   font-weight: 800;

@@ -1,8 +1,11 @@
 /**
- * Actividades del museo.
+ * Actividades del museo actualizadas.
  *
- * `tipo` decide qué página se abre y qué datos necesita la ruta.
- * `recompensaId` debe existir en `datos/coleccion.js`.
+ * Salas activas:
+ * - animales
+ * - colores (Sala de arte)
+ * - cultura (Cultura y tradiciones)
+ * - sonidos
  */
 export const actividades = [
   {
@@ -24,27 +27,9 @@ export const actividades = [
     recompensaId: 'tesoro-animales',
   },
   {
-    id: 'pintura-plantas',
-    nombre: 'Pinta el jardín de Kusi',
-    descripcion: 'Elige un color y pinta cada parte del jardín a tu manera.',
-    tipo: 'pintar',
-    salaId: 'plantas',
-    ruta: '/salas/plantas/pintar/jardin',
-    recompensaId: 'pintura-plantas',
-  },
-  {
-    id: 'cuento-plantas',
-    nombre: 'La semilla curiosa',
-    descripcion: 'Escucha la historia de una semilla que crece con paciencia.',
-    tipo: 'cuento',
-    salaId: 'plantas',
-    ruta: '/salas/plantas/cuento/semilla',
-    recompensaId: 'cuento-plantas',
-  },
-  {
     id: 'pintura-colores',
-    nombre: 'La manta de los colores',
-    descripcion: 'Pinta una manta andina con los tonos que más te gusten.',
+    nombre: 'Pinta tu obra de arte',
+    descripcion: 'Pinta una manta andina con los tonos y figuras que más te gusten.',
     tipo: 'pintar',
     salaId: 'colores',
     ruta: '/salas/colores/pintar/manta',
@@ -52,12 +37,30 @@ export const actividades = [
   },
   {
     id: 'rompecabezas-colores',
-    nombre: 'Piezas de colores',
+    nombre: 'Piezas de colores y arte',
     descripcion: 'Arma la imagen del rincón de arte y descubre sus detalles.',
     tipo: 'rompecabezas',
     salaId: 'colores',
     ruta: '/salas/colores/rompecabezas/manta',
     recompensaId: 'puzzle-colores',
+  },
+  {
+    id: 'pintura-cultura',
+    nombre: 'Pinta el jardín de Kusi',
+    descripcion: 'Elige un color y dale vida a esta hermosa escena tradicional.',
+    tipo: 'pintar',
+    salaId: 'cultura',
+    ruta: '/salas/cultura/pintar/jardin',
+    recompensaId: 'pintura-cultura',
+  },
+  {
+    id: 'cuento-cultura',
+    nombre: 'La semilla de nuestra tierra',
+    descripcion: 'Escucha una historia sobre cómo cuidamos la tierra con paciencia y cariño.',
+    tipo: 'cuento',
+    salaId: 'cultura',
+    ruta: '/salas/cultura/cuento/semilla',
+    recompensaId: 'cuento-cultura',
   },
   {
     id: 'sonidos-naturaleza',
@@ -77,24 +80,6 @@ export const actividades = [
     ruta: '/salas/sonidos/cuento/concierto',
     recompensaId: 'cuento-sonidos',
   },
-  {
-    id: 'sonidos-cuerpo',
-    nombre: 'Mi cuerpo suena',
-    descripcion: 'Haz palmas, pasos y latidos. Tu cuerpo también es un instrumento.',
-    tipo: 'sonidos',
-    salaId: 'cuerpo-humano',
-    ruta: '/salas/cuerpo-humano/hacer-sonidos/cuerpo',
-    recompensaId: 'sonidos-cuerpo',
-  },
-  {
-    id: 'cuento-cuerpo',
-    nombre: 'El viaje de la respiración',
-    descripcion: 'Un cuento para respirar despacio y sentir los latidos.',
-    tipo: 'cuento',
-    salaId: 'cuerpo-humano',
-    ruta: '/salas/cuerpo-humano/cuento/respiracion',
-    recompensaId: 'cuento-cuerpo',
-  },
 ]
 
 export const actividadesPorSala = (idSala) => actividades.filter((actividad) => actividad.salaId === idSala)
@@ -106,7 +91,7 @@ export const tiposActividad = [
     tipo: 'pintar',
     nombre: 'Pintar una obra',
     descripcion: 'Colores, pinceles y tu imaginación.',
-    ruta: '/salas/plantas/pintar/jardin',
+    ruta: '/salas/colores/pintar/manta',
     color: '#D97757',
     colorSuave: '#F8E1D5',
   },
@@ -130,14 +115,14 @@ export const tiposActividad = [
     tipo: 'cuento',
     nombre: 'Escuchar un cuento',
     descripcion: 'Historias para imaginar y conversar.',
-    ruta: '/salas/plantas/cuento/semilla',
+    ruta: '/salas/cultura/cuento/semilla',
     color: '#3D5A6C',
     colorSuave: '#DDE8E9',
   },
   {
     tipo: 'sonidos',
     nombre: 'Hacer sonidos',
-    descripcion: 'Naturaleza, ritmo y cuerpo.',
+    descripcion: 'Naturaleza, ritmo y música.',
     ruta: '/salas/sonidos/hacer-sonidos/naturaleza',
     color: '#9B7FA8',
     colorSuave: '#EEE5F2',

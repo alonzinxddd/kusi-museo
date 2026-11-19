@@ -177,7 +177,7 @@ export function Pintar() {
     return (
       <NoEncontrada
         titulo="Esta lámina no está aquí"
-        mensaje="Puede que la lámina pertenezca a otra sala. Vuelve al inicio y entra a la sala de plantas o de colores."
+        mensaje="Puede que la lámina pertenezca a otra sala. Vuelve al inicio y entra a la sala de arte o de cultura."
       />
     )
   }

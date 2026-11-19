@@ -1,4 +1,5 @@
-import { ArrowRight, ChevronLeft, Lightbulb, MessageCircle, Sparkles } from 'lucide-react'
+import { useState } from 'react'
+import { ArrowRight, ChevronLeft, Lightbulb, MessageCircle, Sparkles, Volume2 } from 'lucide-react'
 import { Link, useParams } from 'react-router-dom'
 import { actividadesPorSala } from '../../datos/actividades'
 import { obtenerSala, salas } from '../../datos/salas'
@@ -9,10 +10,10 @@ import { BotonEscuchar } from '../../componentes/boton-escuchar/BotonEscuchar'
 import { TarjetaActividad } from '../../componentes/tarjeta-actividad/TarjetaActividad'
 import { TarjetaSala } from '../../componentes/tarjeta-sala/TarjetaSala'
 import { SeccionAnimales } from '../../componentes/seccion-animales/SeccionAnimales'
-import { SeccionPlantas } from '../../componentes/seccion-plantas/SeccionPlantas'
-import { SeccionColores } from '../../componentes/seccion-colores/SeccionColores'
-import { SeccionSentidos } from '../../componentes/seccion-sentidos/SeccionSentidos'
+import { SeccionArte } from '../../componentes/seccion-arte/SeccionArte'
+import { SeccionCultura } from '../../componentes/seccion-cultura/SeccionCultura'
 import { Icono } from '../../componentes/icono/Icono'
+import { hablar, detenerVoz, vozDisponible } from '../../servicios/voz'
 import { NoEncontrada } from '../no-encontrada/NoEncontrada'
 import './Sala.css'
 
@@ -20,14 +21,31 @@ export function Sala() {
   const { idSala } = useParams()
   const sala = obtenerSala(idSala)
   const { estaDesbloqueada } = useProgreso()
+  const [activoAudio, setActivoAudio] = useState(null) // 'sabiasQue' | 'pregunta' | null
 
   useTitulo(sala?.nombre || 'Sala no encontrada')
+
+  const alternarEscucha = (tipo, texto) => {
+    if (activoAudio === tipo) {
+      detenerVoz()
+      setActivoAudio(null)
+      return
+    }
+    detenerVoz()
+    if (vozDisponible()) {
+      setActivoAudio(tipo)
+      hablar(texto, {
+        onEnd: () => setActivoAudio(null),
+        onError: () => setActivoAudio(null),
+      })
+    }
+  }
 
   if (!sala) {
     return (
       <NoEncontrada
         titulo="Esta sala todavía no existe"
-        mensaje="Quizá escribimos mal el nombre. Vuelve al inicio y elige una de las cinco salas del museo."
+        mensaje="Quizá escribimos mal el nombre. Vuelve al inicio y elige una de las salas del museo."
       />
     )
   }
@@ -87,65 +105,83 @@ export function Sala() {
         </header>
 
         <section className="sala__curiosidades" aria-label="Dato curioso y pregunta para conversar">
-          <article className="curiosidad">
+          <button
+            type="button"
+            className={`curiosidad curiosidad--clicable${activoAudio === 'sabiasQue' ? ' curiosidad--reproduciendo' : ''}`}
+            onClick={() => alternarEscucha('sabiasQue', `¿Sabías que? ${sala.sabiasQue}`)}
+            aria-pressed={activoAudio === 'sabiasQue'}
+            aria-label="Toca para escuchar ¿Sabías que?"
+          >
             <span className="curiosidad__icono" aria-hidden="true">
               <Lightbulb size={24} strokeWidth={1.9} />
             </span>
-            <div>
-              <h2>¿Sabías que…?</h2>
+            <div className="curiosidad__contenido">
+              <h2>
+                ¿Sabías que…?
+                <span className="curiosidad__pista-audio">
+                  <Volume2 size={15} strokeWidth={2.4} aria-hidden="true" />
+                  {activoAudio === 'sabiasQue' ? 'Pausar' : 'Toca para escuchar'}
+                </span>
+              </h2>
               <p>{sala.sabiasQue}</p>
             </div>
-            <BotonEscuchar
-              texto={sala.sabiasQue}
-              etiqueta="Escuchar"
-              variante="fantasma"
-              className="curiosidad__boton"
-            />
-          </article>
+          </button>
 
-          <article className="curiosidad curiosidad--pregunta">
+          <button
+            type="button"
+            className={`curiosidad curiosidad--pregunta curiosidad--clicable${activoAudio === 'pregunta' ? ' curiosidad--reproduciendo' : ''}`}
+            onClick={() => alternarEscucha('pregunta', `Para conversar: ${sala.pregunta}`)}
+            aria-pressed={activoAudio === 'pregunta'}
+            aria-label="Toca para escuchar la pregunta para conversar"
+          >
             <span className="curiosidad__icono" aria-hidden="true">
               <MessageCircle size={24} strokeWidth={1.9} />
             </span>
-            <div>
-              <h2>Para conversar</h2>
+            <div className="curiosidad__contenido">
+              <h2>
+                Para conversar
+                <span className="curiosidad__pista-audio">
+                  <Volume2 size={15} strokeWidth={2.4} aria-hidden="true" />
+                  {activoAudio === 'pregunta' ? 'Pausar' : 'Toca para escuchar'}
+                </span>
+              </h2>
               <p>{sala.pregunta}</p>
               <small>Una pregunta abierta: no hay respuestas correctas.</small>
             </div>
-          </article>
+          </button>
         </section>
 
-        <section className="sala__actividades" aria-labelledby="titulo-actividades">
-          <div className="encabezado-seccion">
-            <div>
-              <p className="etiqueta">
-                <Sparkles size={14} aria-hidden="true" />
-                Elige tu juego
+        {actividades.length > 0 && (
+          <section className="sala__actividades" aria-labelledby="titulo-actividades">
+            <div className="encabezado-seccion">
+              <div>
+                <p className="etiqueta">
+                  <Sparkles size={14} aria-hidden="true" />
+                  Elige tu juego
+                </p>
+                <h2 id="titulo-actividades">Actividades de esta sala</h2>
+              </div>
+              <p>
+                Puedes hacerlas en cualquier orden y repetirlas cuantas veces quieras. Kusi te
+                acompañará con indicaciones en voz alta si lo necesitas.
               </p>
-              <h2 id="titulo-actividades">Actividades de esta sala</h2>
             </div>
-            <p>
-              Puedes hacerlas en cualquier orden y repetirlas cuantas veces quieras. Kusi te
-              acompañará con indicaciones en voz alta si lo necesitas.
-            </p>
-          </div>
 
-          <ul className="sala__lista-actividades">
-            {actividades.map((actividad, indice) => (
-              <li key={actividad.id} className="animar-aparecer" style={{ '--retraso': `${indice * 80}ms` }}>
-                <TarjetaActividad actividad={actividad} sala={sala} />
-              </li>
-            ))}
-          </ul>
-        </section>
+            <ul className="sala__lista-actividades">
+              {actividades.map((actividad, indice) => (
+                <li key={actividad.id} className="animar-aparecer" style={{ '--retraso': `${indice * 80}ms` }}>
+                  <TarjetaActividad actividad={actividad} sala={sala} />
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
 
         {sala.id === 'animales' && <SeccionAnimales />}
 
-        {sala.id === 'plantas' && <SeccionPlantas />}
+        {sala.id === 'colores' && <SeccionArte />}
 
-        {sala.id === 'colores' && <SeccionColores />}
-
-        {sala.id === 'cuerpo-humano' && <SeccionSentidos />}
+        {sala.id === 'cultura' && <SeccionCultura />}
 
         <section className="sala__otras" aria-labelledby="titulo-otras">
           <div className="encabezado-seccion">

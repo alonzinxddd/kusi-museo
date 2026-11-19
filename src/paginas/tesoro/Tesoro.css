@@ -65,59 +65,70 @@
   position: absolute;
   display: grid;
   place-items: center;
-  width: clamp(38px, 6.4%, 70px);
-  aspect-ratio: 1;
-  padding: 4px;
+  width: var(--tamano-objeto, clamp(44px, 7.5%, 85px));
+  aspect-ratio: auto;
+  padding: 0;
   border: 0;
-  border-radius: 50%;
-  background: rgba(255, 253, 248, 0.18);
+  border-radius: 0;
+  background: transparent;
   transform: translate(-50%, -50%);
   cursor: pointer;
-  filter: drop-shadow(0 4px 8px rgba(59, 48, 42, 0.28));
-  transition:
-    background-color var(--transicion),
-    transform 180ms ease,
-    box-shadow 180ms ease;
-  animation: flotar 7s ease-in-out infinite;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.35));
+  transition: filter 180ms ease;
+  animation: none;
 }
 
 .tesoro__objeto:nth-child(2n) {
-  animation-delay: -2.4s;
+  animation: none;
 }
 
 .tesoro__objeto:nth-child(3n) {
-  animation-delay: -4.1s;
+  animation: none;
 }
 
 .tesoro__objeto img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  object-fit: contain;
   pointer-events: none;
 }
 
 .tesoro__objeto:hover,
 .tesoro__objeto:focus-visible {
-  background: rgba(255, 253, 248, 0.55);
-  transform: translate(-50%, -50%) scale(1.14);
-  box-shadow: 0 0 0 4px rgba(255, 253, 248, 0.65);
-  animation-play-state: paused;
+  background: transparent;
+  transform: translate(-50%, -50%);
+  box-shadow: none;
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.9)) drop-shadow(0 6px 14px rgba(0, 0, 0, 0.4));
 }
 
-.tesoro__objeto--hallado {
-  background: rgba(255, 253, 248, 0.92);
-  box-shadow:
-    0 0 0 3px var(--color-objeto),
-    0 8px 18px rgba(59, 48, 42, 0.22);
-  animation: none;
+.tesoro__objeto--hallado,
+.tesoro__objeto--hallado:hover,
+.tesoro__objeto--hallado:focus-visible {
+  background: transparent;
+  transform: translate(-50%, -50%) !important;
+  box-shadow: none !important;
+  filter: drop-shadow(0 0 8px var(--color-objeto, #e9b44c)) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+  animation: none !important;
   cursor: default;
+  pointer-events: none;
+}
+
+@keyframes tesoro-pista-pulso {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    filter: drop-shadow(0 0 10px var(--mostaza)) drop-shadow(0 0 4px #fff);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    filter: drop-shadow(0 0 20px var(--mostaza)) drop-shadow(0 0 10px #fff);
+  }
 }
 
 .tesoro__objeto--pista {
-  background: rgba(255, 249, 236, 0.85);
-  box-shadow:
-    0 0 0 4px var(--mostaza),
-    0 0 0 10px rgba(233, 180, 76, 0.35);
-  animation: latido-suave 1.4s ease-in-out infinite;
+  background: transparent;
+  box-shadow: none;
+  animation: tesoro-pista-pulso 1.4s ease-in-out infinite !important;
 }
 
 .tesoro__objeto-marca {

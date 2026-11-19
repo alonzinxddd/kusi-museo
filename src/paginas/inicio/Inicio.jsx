@@ -21,7 +21,7 @@ const portada =
   archivosPortada['../../activos/imagenes/portada.svg']
 
 const saludo =
-  '¡Hola! Soy Kusi, una llama curiosa. Te invito a recorrer cinco salas con animales, plantas, colores, sonidos y tu cuerpo. Aquí puedes mirar, escuchar y crear sin prisa. ¿Empezamos?'
+  '¡Hola! Soy Kusi, una llama curiosa. Te invito a recorrer nuestras salas con animales, arte, cultura peruana y sonidos mágicos. Aquí puedes mirar, escuchar y crear sin prisa. ¿Empezamos?'
 
 const pasos = [
   {
@@ -63,7 +63,7 @@ export function Inicio() {
 
             <p className="hero__descripcion">
               Un museo virtual pensado para mirar despacio, escuchar con atención y crear con las
-              manos. Cinco salas, cinco formas de jugar y una colección que crece contigo.
+              manos. Cuatro salas, juegos divertidos y una colección que crece contigo.
             </p>
 
             <div className="hero__acciones">
@@ -77,11 +77,11 @@ export function Inicio() {
             <dl className="hero__datos">
               <div>
                 <dt>Salas</dt>
-                <dd>5</dd>
+                <dd>{salas.length}</dd>
               </div>
               <div>
                 <dt>Actividades</dt>
-                <dd>10</dd>
+                <dd>8</dd>
               </div>
               <div>
                 <dt>Sellos</dt>
@@ -92,11 +92,6 @@ export function Inicio() {
 
           <div className="hero__imagen animar-escala">
             <Cortinas imagen={portada} alt="Kusi comparte un jardín de flores con dos niños que leen y pintan" />
-
-            <div className="hero__burbuja">
-              <img src={mascota} alt="" width="52" height="58" />
-              <p>Todo lo que hagas se queda en este dispositivo.</p>
-            </div>
 
             <span className="hero__estrella hero__estrella--1" aria-hidden="true">
               <Star size={26} fill="currentColor" strokeWidth={1.2} />

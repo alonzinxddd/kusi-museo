@@ -1,6 +1,6 @@
 /**
  * Colección de sellos de Kusi.
- * Cada actividad entrega un sello distinto; no hay puntajes ni comparaciones.
+ * Cada actividad entrega un sello distinto.
  */
 export const coleccion = [
   {
@@ -22,27 +22,9 @@ export const coleccion = [
     colorSuave: '#F6E4C6',
   },
   {
-    id: 'pintura-plantas',
-    nombre: 'Jardín florecido',
-    descripcion: 'Por pintar el jardín de Kusi.',
-    salaId: 'plantas',
-    icono: 'pintar',
-    color: '#6E8A70',
-    colorSuave: '#E2EBDD',
-  },
-  {
-    id: 'cuento-plantas',
-    nombre: 'Semilla valiente',
-    descripcion: 'Por escuchar la historia de la semilla curiosa.',
-    salaId: 'plantas',
-    icono: 'cuento',
-    color: '#5F7A63',
-    colorSuave: '#E6EFE2',
-  },
-  {
     id: 'pintura-colores',
     nombre: 'Manta de arcoíris',
-    descripcion: 'Por pintar una manta llena de color.',
+    descripcion: 'Por pintar una manta llena de arte y color.',
     salaId: 'colores',
     icono: 'pintar',
     color: '#D97757',
@@ -51,11 +33,29 @@ export const coleccion = [
   {
     id: 'puzzle-colores',
     nombre: 'Piezas de alegría',
-    descripcion: 'Por completar el rompecabezas de colores.',
+    descripcion: 'Por completar el rompecabezas del rincón de arte.',
     salaId: 'colores',
     icono: 'rompecabezas',
     color: '#3D5A6C',
     colorSuave: '#DDE8E9',
+  },
+  {
+    id: 'pintura-cultura',
+    nombre: 'Jardín de tradiciones',
+    descripcion: 'Por pintar la escena tradicional.',
+    salaId: 'cultura',
+    icono: 'pintar',
+    color: '#B07D3E',
+    colorSuave: '#F6E4C6',
+  },
+  {
+    id: 'cuento-cultura',
+    nombre: 'Amor por la tierra',
+    descripcion: 'Por escuchar la historia tradicional.',
+    salaId: 'cultura',
+    icono: 'cuento',
+    color: '#5F7A63',
+    colorSuave: '#E6EFE2',
   },
   {
     id: 'sonidos-naturaleza',
@@ -74,24 +74,6 @@ export const coleccion = [
     icono: 'cuento',
     color: '#3D5A6C',
     colorSuave: '#DDE8E9',
-  },
-  {
-    id: 'sonidos-cuerpo',
-    nombre: 'Corazón que late',
-    descripcion: 'Por hacer sonidos con tu cuerpo.',
-    salaId: 'cuerpo-humano',
-    icono: 'corazon',
-    color: '#E8A598',
-    colorSuave: '#FBE4DE',
-  },
-  {
-    id: 'cuento-cuerpo',
-    nombre: 'Respiración de brisa',
-    descripcion: 'Por escuchar el cuento de la respiración.',
-    salaId: 'cuerpo-humano',
-    icono: 'viento',
-    color: '#7E9DA1',
-    colorSuave: '#E4EEEE',
   },
 ]
 

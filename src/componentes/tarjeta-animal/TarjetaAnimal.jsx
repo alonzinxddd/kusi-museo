@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Headphones, MapPin, Pause, Play, Volume2 } from 'lucide-react'
+import { hablar, detenerVoz, vozDisponible } from '../../servicios/voz'
 import './TarjetaAnimal.css'
 
 /**
@@ -17,6 +18,7 @@ export function TarjetaAnimal({ animal, imagen, sonido, descripcionAudio }) {
   const audioRef = useRef(null)
 
   const detener = () => {
+    detenerVoz()
     if (audioRef.current) {
       audioRef.current.pause()
       audioRef.current.currentTime = 0
@@ -28,15 +30,6 @@ export function TarjetaAnimal({ animal, imagen, sonido, descripcionAudio }) {
   useEffect(() => () => detener(), [])
 
   const reproducir = (tipo, url) => {
-    if (!url) {
-      setError(
-        tipo === 'sonido'
-          ? 'Aún no hay sonido para este animal. Agrega el archivo en src/activos/audios/animales/.'
-          : 'Aún no hay descripción narrada. Agrega el audio en src/activos/audios/animales/.',
-      )
-      return
-    }
-
     if (reproduciendo === tipo) {
       detener()
       return
@@ -44,6 +37,59 @@ export function TarjetaAnimal({ animal, imagen, sonido, descripcionAudio }) {
 
     detener()
     setError('')
+
+    // Si es descripción y hay archivo grabado, lo reproduce; si no, la lee con la voz del robot
+    if (tipo === 'descripcion') {
+      const textoVoz = `${animal.nombre}. ${animal.descripcion}`
+
+      if (url) {
+        const audio = new Audio(url)
+        audioRef.current = audio
+        audio.addEventListener('ended', () => {
+          setReproduciendo(null)
+          audioRef.current = null
+        })
+        audio.addEventListener('error', () => {
+          // Si falla el archivo, respaldo con voz sintetizada
+          if (vozDisponible()) {
+            hablar(textoVoz, {
+              onEnd: () => setReproduciendo(null),
+              onError: () => setReproduciendo(null),
+            })
+            setReproduciendo('descripcion')
+          }
+        })
+        audio.play().catch(() => {
+          if (vozDisponible()) {
+            hablar(textoVoz, {
+              onEnd: () => setReproduciendo(null),
+              onError: () => setReproduciendo(null),
+            })
+            setReproduciendo('descripcion')
+          }
+        })
+        setReproduciendo('descripcion')
+        return
+      }
+
+      if (vozDisponible()) {
+        hablar(textoVoz, {
+          onEnd: () => setReproduciendo(null),
+          onError: () => setReproduciendo(null),
+        })
+        setReproduciendo('descripcion')
+        return
+      }
+
+      setError('La voz no está disponible en este dispositivo.')
+      return
+    }
+
+    // Si es efecto de sonido
+    if (!url) {
+      setError('Aún no hay sonido para este animal. Agrega el archivo en src/activos/audios/sonido/.')
+      return
+    }
 
     const audio = new Audio(url)
     audioRef.current = audio
@@ -115,7 +161,6 @@ export function TarjetaAnimal({ animal, imagen, sonido, descripcionAudio }) {
               reproduciendo === 'descripcion' ? ' tarjeta-animal__boton--activo' : ''
             }`}
             onClick={() => reproducir('descripcion', descripcionAudio)}
-            disabled={!descripcionAudio}
             aria-pressed={reproduciendo === 'descripcion'}
             aria-label={
               reproduciendo === 'descripcion'

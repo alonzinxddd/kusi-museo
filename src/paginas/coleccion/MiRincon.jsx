@@ -227,7 +227,7 @@ export function MiRincon() {
                   antigua para dejar espacio a una nueva.
                 </p>
               </div>
-              <Link to="/salas/plantas/pintar/jardin" className="boton boton--primario boton--pequeno">
+              <Link to="/salas/colores/pintar/manta" className="boton boton--primario boton--pequeno">
                 <Plus size={17} aria-hidden="true" />
                 Pintar algo nuevo
               </Link>
@@ -239,7 +239,7 @@ export function MiRincon() {
                   <Palette size={40} strokeWidth={1.5} />
                 </span>
                 <h3>Tu galería está esperando su primera obra</h3>
-                <p>Entra a la sala de plantas o de colores y pinta lo que imagines.</p>
+                <p>Entra a la sala de arte o de cultura y tradiciones y pinta lo que imagines.</p>
                 <Link to="/#salas" className="boton boton--secundario">
                   Explorar las salas
                   <ArrowRight size={18} aria-hidden="true" />

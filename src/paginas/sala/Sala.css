@@ -150,6 +150,55 @@
   background: var(--papel);
   border: 1.5px solid rgba(59, 48, 42, 0.09);
   box-shadow: var(--sombra-baja);
+  text-align: left;
+  font-family: inherit;
+  width: 100%;
+}
+
+.curiosidad--clicable {
+  cursor: pointer;
+  transition: transform var(--transicion), box-shadow var(--transicion), border-color var(--transicion), background-color var(--transicion);
+}
+
+.curiosidad--clicable:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-sala);
+  box-shadow: var(--sombra-media);
+}
+
+.curiosidad--reproduciendo {
+  border-color: var(--color-sala) !important;
+  background: var(--color-suave-sala, #f8e1d5) !important;
+}
+
+.curiosidad__contenido {
+  flex: 1;
+}
+
+.curiosidad h2 {
+  font-size: 1.06rem;
+  margin-bottom: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.curiosidad__pista-audio {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: var(--color-sala, var(--terracota));
+  background: rgba(255, 253, 248, 0.9);
+  padding: 2px 8px;
+  border-radius: var(--radio-pildora);
+}
+
+.curiosidad--reproduciendo .curiosidad__pista-audio {
+  background: var(--color-sala);
+  color: #fff;
 }
 
 .curiosidad__icono {
