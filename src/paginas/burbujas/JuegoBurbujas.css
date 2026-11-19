@@ -1,0 +1,272 @@
+.juego-burbujas {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+/* Panel superior de objetivo */
+.burbujas__panel-objetivo {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background: #ffffff;
+  padding: 1rem 1.5rem;
+  border-radius: 1.5rem;
+  border: 3.5px solid #ffc837;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  position: relative;
+  overflow: hidden;
+  animation: deslizar-abajo 0.4s ease;
+}
+
+.burbujas__muestra-color {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15), inset 0 4px 8px rgba(255, 255, 255, 0.8);
+  flex-shrink: 0;
+  animation: pulso-suave 2s infinite ease-in-out;
+}
+
+.burbujas__muestra-icono {
+  font-size: 2rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.burbujas__info-meta {
+  flex: 1;
+}
+
+.burbujas__etiqueta {
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #718096;
+}
+
+.burbujas__nombre-color {
+  font-size: clamp(1.6rem, 3.5vw, 2.3rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0.15rem 0;
+  font-family: 'Baloo 2', system-ui, sans-serif;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.burbujas__instruccion-voz {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #4a5568;
+  margin: 0;
+}
+
+/* Estrellas de progreso */
+.burbujas__progreso-estrellas {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.burbujas__estrella-hito {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: #ffffff;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.burbujas__estrella-hito.activa {
+  transform: scale(1.15) rotate(10deg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+  animation: estallido-estrella 0.4s ease;
+}
+
+/* Estanque / Pantalla de juego */
+.burbujas__estanque {
+  position: relative;
+  width: 100%;
+  height: clamp(380px, 58vh, 550px);
+  background: radial-gradient(circle at 50% 20%, #fdfbf7 0%, #f5efe6 100%);
+  border-radius: 2rem;
+  border: 4px dashed rgba(217, 119, 87, 0.35);
+  overflow: hidden;
+  user-select: none;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+/* Manchas de salpicadura de pintura */
+.burbujas__salpicadura {
+  position: absolute;
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+  opacity: 0.65;
+  pointer-events: none;
+  filter: blur(0.5px);
+  animation: aparecer-mancha 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
+}
+
+/* Burbujas flotantes */
+.burbuja-globo {
+  position: absolute;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  transform: translateY(110%);
+  animation-name: flotar-hacia-arriba;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  transition: transform 0.15s ease;
+  z-index: 5;
+}
+
+.burbuja-globo:hover {
+  transform: scale(1.08);
+}
+
+.burbuja-globo:active {
+  transform: scale(0.92);
+}
+
+.burbuja-brillo {
+  position: absolute;
+  top: 15%;
+  left: 20%;
+  width: 25%;
+  height: 25%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 80%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.burbuja-icono {
+  font-size: 1.8rem;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+}
+
+/* Animación de reventón */
+.burbuja-globo.reventada {
+  animation: reventon 0.4s ease forwards !important;
+  pointer-events: none;
+}
+
+@keyframes flotar-hacia-arriba {
+  0% {
+    bottom: -120px;
+    transform: translateX(0) scale(0.9);
+  }
+  30% {
+    transform: translateX(18px) scale(1);
+  }
+  70% {
+    transform: translateX(-18px) scale(1.02);
+  }
+  100% {
+    bottom: 105%;
+    transform: translateX(8px) scale(1);
+  }
+}
+
+@keyframes reventon {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes aparecer-mancha {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes estallido-estrella {
+  0% {
+    transform: scale(0.6);
+  }
+  70% {
+    transform: scale(1.35) rotate(15deg);
+  }
+  100% {
+    transform: scale(1.15) rotate(10deg);
+  }
+}
+
+/* Pantalla de Victoria */
+.burbujas__victoria {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 253, 248, 0.94);
+  backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  z-index: 20;
+  animation: aparecer 0.4s ease;
+}
+
+.burbujas__victoria-icono {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+  animation: saltar-suave 1.2s infinite ease-in-out;
+}
+
+.burbujas__victoria-titulo {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 900;
+  color: #3b302a;
+  margin: 0.2rem 0;
+  font-family: 'Baloo 2', system-ui, sans-serif;
+}
+
+.burbujas__victoria-desc {
+  max-width: 480px;
+  font-size: 1.15rem;
+  color: #5d5047;
+  font-weight: 700;
+  margin-bottom: 1.8rem;
+}
+
+.burbujas__victoria-acciones {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@keyframes saltar-suave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}

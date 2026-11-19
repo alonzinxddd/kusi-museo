@@ -12,6 +12,7 @@ import { TarjetaSala } from '../../componentes/tarjeta-sala/TarjetaSala'
 import { SeccionAnimales } from '../../componentes/seccion-animales/SeccionAnimales'
 import { SeccionArte } from '../../componentes/seccion-arte/SeccionArte'
 import { SeccionCultura } from '../../componentes/seccion-cultura/SeccionCultura'
+import { SeccionInstrumentos } from '../../componentes/seccion-instrumentos/SeccionInstrumentos'
 import { Icono } from '../../componentes/icono/Icono'
 import { hablar, detenerVoz, vozDisponible } from '../../servicios/voz'
 import { NoEncontrada } from '../no-encontrada/NoEncontrada'
@@ -182,6 +183,8 @@ export function Sala() {
         {sala.id === 'colores' && <SeccionArte />}
 
         {sala.id === 'cultura' && <SeccionCultura />}
+
+        {sala.id === 'sonidos' && <SeccionInstrumentos />}
 
         <section className="sala__otras" aria-labelledby="titulo-otras">
           <div className="encabezado-seccion">

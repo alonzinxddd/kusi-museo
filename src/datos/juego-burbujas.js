@@ -1,0 +1,58 @@
+/**
+ * Configuración de colores y desafíos para el juego "Burbujas de Colores"
+ * Diseñado especialmente para niños de 3 a 5 años (Educación Inicial).
+ */
+export const desafiosBurbujas = [
+  {
+    id: 'amarillo',
+    nombreColor: 'amarillo',
+    nombreVisual: 'Amarillo',
+    pregunta: '¡Vamos a reventar las burbujas amarillas como el sol!',
+    fraseAcierto: '¡Pop! ¡Muy bien, una burbuja amarilla!',
+    fraseCompletado: '¡Maravilloso! ¡Reventaste todas las burbujas amarillas!',
+    colorHex: '#FFC837',
+    colorGradiente: 'radial-gradient(circle at 35% 30%, #FFF3B0, #FFC837 70%, #E69D00)',
+    colorSombra: 'rgba(255, 200, 55, 0.65)',
+    icono: '☀️',
+    meta: 3,
+  },
+  {
+    id: 'azul',
+    nombreColor: 'azul',
+    nombreVisual: 'Azul',
+    pregunta: '¡Ahora busca y revienta las burbujas azules como el mar!',
+    fraseAcierto: '¡Pop! ¡Excelente, una burbuja azul!',
+    fraseCompletado: '¡Genial! ¡Reventaste todas las burbujas azules!',
+    colorHex: '#2196F3',
+    colorGradiente: 'radial-gradient(circle at 35% 30%, #B3E5FC, #2196F3 70%, #1565C0)',
+    colorSombra: 'rgba(33, 150, 243, 0.65)',
+    icono: '🌊',
+    meta: 3,
+  },
+  {
+    id: 'rojo',
+    nombreColor: 'rojo',
+    nombreVisual: 'Rojo',
+    pregunta: '¡Toca y revienta las burbujas rojas como una manzana!',
+    fraseAcierto: '¡Pop! ¡Bravo, una burbuja roja!',
+    fraseCompletado: '¡Fantástico! ¡Reventaste todas las burbujas rojas!',
+    colorHex: '#FF3366',
+    colorGradiente: 'radial-gradient(circle at 35% 30%, #FFCDD2, #FF3366 70%, #C2185B)',
+    colorSombra: 'rgba(255, 51, 102, 0.65)',
+    icono: '🍎',
+    meta: 3,
+  },
+  {
+    id: 'verde',
+    nombreColor: 'verde',
+    nombreVisual: 'Verde',
+    pregunta: '¡Por último, revienta las burbujas verdes como una plantita!',
+    fraseAcierto: '¡Pop! ¡Qué bien, una burbuja verde!',
+    fraseCompletado: '¡Increíble artista! ¡Completaste todos los colores mágicos!',
+    colorHex: '#4CAF50',
+    colorGradiente: 'radial-gradient(circle at 35% 30%, #C8E6C9, #4CAF50 70%, #2E7D32)',
+    colorSombra: 'rgba(76, 175, 80, 0.65)',
+    icono: '🌿',
+    meta: 3,
+  },
+]

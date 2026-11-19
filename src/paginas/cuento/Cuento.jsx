@@ -79,9 +79,9 @@ export function Cuento() {
         <figure className="cuento__ilustracion">
           <img
             key={`${cuento.id}-${pagina}`}
-            src={cuento.imagen}
+            src={actual.imagen || cuento.imagen}
             alt={`Ilustración del cuento ${cuento.titulo}, página ${pagina + 1}`}
-            style={{ objectPosition: actual.posicion }}
+            style={{ objectPosition: actual.posicion || 'center' }}
           />
           <figcaption>
             Página {pagina + 1} de {total}

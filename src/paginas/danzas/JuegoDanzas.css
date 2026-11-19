@@ -1,0 +1,218 @@
+.juego-danzas__contenedor {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2.5vw, 24px);
+}
+
+.juego-danzas__panel-voz {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 24px;
+  border-radius: var(--radio-md);
+  background: var(--papel);
+  border: 2px solid rgba(217, 119, 87, 0.25);
+  box-shadow: var(--sombra-baja);
+}
+
+.juego-danzas__indicador {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.juego-danzas__icono-onda {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--color-suave-cultura, #f8e1d5);
+  color: var(--terracota);
+  display: grid;
+  place-items: center;
+  animation: pulso-suave 2s infinite ease-in-out;
+}
+
+.juego-danzas__instruccion h2 {
+  font-family: var(--fuente-titulos);
+  font-size: 1.35rem;
+  color: var(--tinta);
+  margin: 0;
+}
+
+.juego-danzas__instruccion h2 span {
+  color: var(--terracota);
+}
+
+.juego-danzas__turno {
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--tinta-suave);
+  margin: 0 0 2px;
+}
+
+.juego-danzas__subtexto {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #555;
+  margin: 4px 0 0;
+}
+
+.juego-danzas__acciones-voz {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Grilla de las 3 imágenes */
+.juego-danzas__grilla {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(14px, 2.5vw, 24px);
+}
+
+.tarjeta-danza-juego {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radio-lg);
+  overflow: hidden;
+  background: var(--papel);
+  border: 3px solid rgba(59, 48, 42, 0.1);
+  box-shadow: var(--sombra-media);
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  transition: transform var(--transicion), box-shadow var(--transicion), border-color var(--transicion);
+}
+
+.tarjeta-danza-juego:hover:not(:disabled) {
+  transform: translateY(-6px);
+  border-color: var(--color-danza, var(--terracota));
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+}
+
+.tarjeta-danza-juego__marco-foto {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  overflow: hidden;
+  background: var(--color-suave-danza, #f5f5f5);
+}
+
+.tarjeta-danza-juego__marco-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transicion-lenta);
+}
+
+.tarjeta-danza-juego:hover:not(:disabled) .tarjeta-danza-juego__marco-foto img {
+  transform: scale(1.05);
+}
+
+.tarjeta-danza-juego__etiqueta {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(255, 253, 248, 0.94);
+  backdrop-filter: blur(4px);
+  padding: 4px 10px;
+  border-radius: var(--radio-pildora);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--color-danza, var(--terracota));
+  box-shadow: var(--sombra-baja);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tarjeta-danza-juego__pie {
+  padding: 14px 18px;
+  background: #ffffff;
+}
+
+.tarjeta-danza-juego__pie h3 {
+  font-family: var(--fuente-titulos);
+  font-size: 1.25rem;
+  color: var(--tinta);
+  margin: 0;
+  text-align: center;
+}
+
+/* Estado de acierto */
+.tarjeta-danza-juego--acertada {
+  border-color: #5f7a63 !important;
+  cursor: default;
+}
+
+.tarjeta-danza-juego__check-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(95, 122, 99, 0.82);
+  backdrop-filter: blur(2px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  gap: 6px;
+  font-family: var(--fuente-titulos);
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+/* Animación de error (sacudida suave) */
+.tarjeta-danza-juego--error {
+  animation: sacudir 0.4s ease-in-out;
+  border-color: #d9534f !important;
+}
+
+@keyframes sacudir {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  75% { transform: translateX(8px); }
+}
+
+@keyframes pulso-suave {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+/* Banner de logro */
+.juego-danzas__logro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 24px;
+  border-radius: var(--radio-md);
+  background: linear-gradient(135deg, #fff7ea, #ffe8cb);
+  border: 2px solid var(--mostaza);
+  color: var(--tinta);
+}
+
+.juego-danzas__logro svg {
+  color: #b07d3e;
+  flex-shrink: 0;
+}
+
+.juego-danzas__logro h3 {
+  font-family: var(--fuente-titulos);
+  font-size: 1.3rem;
+  margin: 0 0 2px;
+}
+
+.juego-danzas__logro p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #6d5b52;
+}
+
+@media (max-width: 768px) {
+  .juego-danzas__grilla {
+    grid-template-columns: 1fr;
+  }
+}
