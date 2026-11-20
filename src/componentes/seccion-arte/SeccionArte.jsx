@@ -1,16 +1,18 @@
 import { useState, useRef, useEffect } from 'react'
 import { pinturasListas, videosArteListos } from '../../datos/arte'
 import { SeccionColores } from '../seccion-colores/SeccionColores'
-import { hablar, vozDisponible } from '../../servicios/voz'
-import { Palette, Film, Headphones, Play, Pause, Volume2, Video } from 'lucide-react'
+import { hablar, detenerVoz, vozDisponible } from '../../servicios/voz'
+import { Palette, Film, Headphones, Play, Pause, Volume2, Video, ZoomIn, X } from 'lucide-react'
 import './SeccionArte.css'
 
 export function SeccionArte() {
   const [pestanaActiva, setPestanaActiva] = useState('pinturas') // 'pinturas' | 'videos' | 'colores'
   const [reproduciendo, setReproduciendo] = useState(null)
+  const [imagenModal, setImagenModal] = useState(null)
   const audioRef = useRef(null)
 
   const detenerAudio = () => {
+    detenerVoz()
     if (audioRef.current) {
       audioRef.current.pause()
       audioRef.current.currentTime = 0
@@ -121,9 +123,19 @@ export function SeccionArte() {
                 className="tarjeta-pintura"
                 style={{ '--color-obra': pintura.color, '--color-suave-obra': pintura.colorSuave }}
               >
-                <div className="tarjeta-pintura__visual">
+                <div
+                  className="tarjeta-pintura__visual tarjeta-pintura__visual--clickable"
+                  onClick={() => pintura.imagen && setImagenModal(pintura)}
+                  title="Toca para ver la imagen en grande"
+                >
                   {pintura.imagen ? (
-                    <img src={pintura.imagen} alt={pintura.titulo} loading="lazy" />
+                    <>
+                      <img src={pintura.imagen} alt={pintura.titulo} loading="lazy" />
+                      <div className="tarjeta-pintura__hover-zoom">
+                        <ZoomIn size={24} strokeWidth={2.2} />
+                        <span>Ver en grande</span>
+                      </div>
+                    </>
                   ) : (
                     <div className="tarjeta-pintura__placeholder">
                       <span className="tarjeta-pintura__placeholder-icono">
@@ -162,6 +174,33 @@ export function SeccionArte() {
                 </div>
               </article>
             ))}
+          </div>
+        </div>
+      )}
+
+      {/* Ventana emergente (Modal) para ver la obra en tamaño completo */}
+      {imagenModal && (
+        <div className="modal-pintura" onClick={() => setImagenModal(null)}>
+          <div className="modal-pintura__contenido" onClick={(e) => e.stopPropagation()}>
+            <button
+              type="button"
+              className="modal-pintura__cerrar"
+              onClick={() => setImagenModal(null)}
+              aria-label="Cerrar vista completa"
+            >
+              <X size={26} strokeWidth={2.4} />
+            </button>
+            <div className="modal-pintura__imagen-caja">
+              <img
+                src={imagenModal.imagen}
+                alt={imagenModal.titulo}
+                className="modal-pintura__imagen"
+              />
+            </div>
+            <div className="modal-pintura__pie">
+              <h3>{imagenModal.titulo}</h3>
+              <p><strong>{imagenModal.autor}</strong> &bull; {imagenModal.tecnica}</p>
+            </div>
           </div>
         </div>
       )}
@@ -207,11 +246,6 @@ export function SeccionArte() {
               </article>
             ))}
           </div>
-
-          <p className="seccion-arte__pista-archivos">
-            🎬 <strong>Cómo poner tus vídeos:</strong> Puedes colocar tus archivos de video en{' '}
-            <code>src/activos/videos/arte/{'{id}'}.mp4</code> o enlazar links en <code>src/datos/arte.js</code>.
-          </p>
         </div>
       )}
 

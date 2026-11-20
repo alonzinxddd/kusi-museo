@@ -41,10 +41,10 @@ export const coleccion = [
   },
   {
     id: 'pintura-cultura',
-    nombre: 'Jardín de tradiciones',
-    descripcion: 'Por pintar la escena tradicional.',
+    nombre: 'Guardián de tradiciones',
+    descripcion: 'Por descubrir las fiestas y costumbres peruanas en ¡Adivina la tradición!',
     salaId: 'cultura',
-    icono: 'pintar',
+    icono: 'tesoro',
     color: '#B07D3E',
     colorSuave: '#F6E4C6',
   },

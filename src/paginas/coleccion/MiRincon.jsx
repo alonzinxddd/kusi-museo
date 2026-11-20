@@ -59,7 +59,7 @@ export function MiRincon() {
             </p>
             <h1>Mi rincón</h1>
             <p>
-              Aquí viven tus sellos y tus dibujos. Nadie más los ve: se guardan solamente en este
+              Aquí viven tus sellos. Nadie más los ve: se guardan solamente en este
               dispositivo, sin cuentas ni nombres.
             </p>
           </div>
@@ -77,13 +77,6 @@ export function MiRincon() {
               </strong>
               <span>sellos</span>
             </div>
-            <div className="rincon__dato">
-              <Images size={22} strokeWidth={1.9} aria-hidden="true" />
-              <strong>
-                {creaciones.length}/{maximo}
-              </strong>
-              <span>obras</span>
-            </div>
           </div>
         </header>
 
@@ -100,19 +93,6 @@ export function MiRincon() {
             <Star size={19} strokeWidth={2} aria-hidden="true" />
             Mi colección
             <span className="rincon__pestana-cuenta">{cantidadSellos}</span>
-          </button>
-          <button
-            type="button"
-            role="tab"
-            id="pestana-galeria"
-            aria-selected={pestana === 'galeria'}
-            aria-controls="panel-galeria"
-            className={`rincon__pestana${pestana === 'galeria' ? ' rincon__pestana--activa' : ''}`}
-            onClick={() => setPestana('galeria')}
-          >
-            <Palette size={19} strokeWidth={2} aria-hidden="true" />
-            Mi galería
-            <span className="rincon__pestana-cuenta">{creaciones.length}</span>
           </button>
         </div>
 

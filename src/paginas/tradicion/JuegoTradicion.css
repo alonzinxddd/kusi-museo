@@ -1,0 +1,291 @@
+.juego-tradicion {
+  max-width: 660px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.tradicion__tarjeta {
+  background: var(--papel, #fffdf8);
+  border: 1.5px solid rgba(59, 48, 42, 0.12);
+  border-radius: 26px;
+  padding: clamp(20px, 4vw, 32px);
+  box-shadow: 0 12px 36px rgba(90, 56, 32, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.tradicion__etiqueta {
+  display: inline-block;
+  border-radius: 30px;
+  background: #f8edd7;
+  color: #8d6935;
+  padding: 8px 16px;
+  font-weight: 800;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  width: fit-content;
+  margin-bottom: 0.8rem;
+}
+
+.tradicion__titulo-principal {
+  font-size: clamp(1.8rem, 4vw, 2.3rem);
+  font-weight: 900;
+  color: var(--tinta, #382d29);
+  margin: 0 0 0.5rem;
+  font-family: var(--fuente-titulos);
+}
+
+.tradicion__sub {
+  color: #776a60;
+  line-height: 1.5;
+  font-size: 0.98rem;
+  margin: 0 0 1.25rem;
+}
+
+.tradicion__fila-progreso {
+  display: flex;
+  justify-content: space-between;
+  color: #817469;
+  font-weight: 800;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.tradicion__barra-pista {
+  height: 10px;
+  background: #eee5d7;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 1.2rem;
+}
+
+.tradicion__barra-llena {
+  height: 100%;
+  background: #d8a34f;
+  transition: width 0.3s ease;
+  border-radius: 20px;
+}
+
+.tradicion__escena {
+  margin: 0.5rem 0 1.2rem;
+  background: #fff2d9;
+  border-radius: 22px;
+  padding: 1.5rem;
+  text-align: center;
+  border: 1px dashed rgba(216, 163, 79, 0.4);
+}
+
+.tradicion__emojis {
+  font-size: clamp(3.2rem, 8vw, 4.5rem);
+  line-height: 1.2;
+}
+
+.tradicion__escena-desc {
+  margin: 0.6rem 0 0;
+  color: #7d6751;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.tradicion__pregunta {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  text-align: center;
+  color: var(--tinta, #382d29);
+  margin: 0.8rem 0 0.6rem;
+  font-family: var(--fuente-titulos);
+}
+
+.tradicion__pista {
+  background: #f7f1e6;
+  border-radius: 16px;
+  padding: 12px 18px;
+  text-align: center;
+  color: #75675b;
+  line-height: 1.45;
+  font-size: 0.95rem;
+  margin-bottom: 1.2rem;
+  border-left: 4px solid #d8a34f;
+}
+
+.tradicion__pista--interactiva {
+  width: 100%;
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.tradicion__pista--interactiva:hover {
+  background: #f2e9d8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(216, 163, 79, 0.18);
+}
+
+.tradicion__pista--interactiva:active {
+  transform: scale(0.98);
+}
+
+.tradicion__pista-icono-voz {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #d8a34f;
+  color: #ffffff;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(216, 163, 79, 0.3);
+}
+
+.tradicion__opciones {
+  display: grid;
+  gap: 12px;
+}
+
+.tradicion__opcion {
+  border: 2px solid #e9dfd1;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 14px 18px;
+  text-align: left;
+  font-weight: 800;
+  color: var(--tinta, #382d29);
+  font-size: 1.05rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.tradicion__opcion:hover:not(:disabled) {
+  border-color: #d8a34f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(216, 163, 79, 0.15);
+}
+
+.tradicion__opcion:disabled {
+  cursor: default;
+}
+
+.tradicion__opcion.correcta {
+  border-color: #5d9272;
+  background: #edf7ef;
+  color: #2e6040;
+}
+
+.tradicion__opcion.incorrecta {
+  border-color: #d98a72;
+  background: #fff0eb;
+  color: #a4482e;
+}
+
+.tradicion__retroalimentacion {
+  margin-top: 1.2rem;
+  padding: 14px 18px;
+  border-radius: 16px;
+  background: #f4f0e7;
+  line-height: 1.5;
+  border-left: 4px solid #cf7659;
+}
+
+.tradicion__retroalimentacion strong {
+  display: block;
+  font-size: 1.05rem;
+  margin-bottom: 0.25rem;
+  color: var(--tinta);
+}
+
+.tradicion__retroalimentacion p {
+  margin: 0;
+  color: #64554b;
+  font-weight: 600;
+}
+
+.tradicion__boton-siguiente {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  border: 0;
+  border-radius: 18px;
+  padding: 15px;
+  background: #cf7659;
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 1.1rem;
+  margin-top: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--fuente-titulos);
+}
+
+.tradicion__boton-siguiente:hover:not(:disabled) {
+  background: #ba6044;
+  transform: translateY(-1px);
+}
+
+.tradicion__boton-siguiente:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Pantalla final de resultado */
+.tradicion__resultado {
+  background: var(--papel, #fffdf8);
+  border: 1.5px solid rgba(59, 48, 42, 0.12);
+  border-radius: 26px;
+  padding: clamp(24px, 5vw, 40px);
+  text-align: center;
+  box-shadow: 0 12px 36px rgba(90, 56, 32, 0.08);
+}
+
+.tradicion__trofeo {
+  font-size: 4.8rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.tradicion__resultado h2 {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--tinta);
+  margin: 0.2rem 0;
+  font-family: var(--fuente-titulos);
+}
+
+.tradicion__resultado p {
+  color: #776a60;
+  font-size: 1.05rem;
+  max-width: 480px;
+  margin: 0.5rem auto 1rem;
+}
+
+.tradicion__puntuacion-final {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #5d9272;
+  margin: 0.8rem 0;
+  font-family: var(--fuente-titulos);
+}
+
+.tradicion__mensaje-final {
+  font-weight: 800;
+  color: var(--tinta);
+}
+
+.tradicion__acciones-finales {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.8rem;
+}

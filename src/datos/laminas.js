@@ -20,18 +20,7 @@ export const laminas = [
     svg: archivos['../activos/imagenes/colorear/bluey.svg'],
     bienvenida:
       '¡Hola! Vamos a colorear a Bluey. Elige un color y toca el arcoíris, las flores, el sol o el rico helado. ¡Diviértete!',
-  },
-  {
-    id: 'jardin',
-    nombre: 'El jardín de Kusi',
-    descripcion: 'Flores, una llama y una mariposa esperan tus colores.',
-    salaId: 'cultura',
-    recompensaId: 'pintura-cultura',
-    archivo: 'jardin.svg',
-    svg: archivos['../activos/imagenes/colorear/jardin.svg'],
-    bienvenida:
-      'Elige un color de la paleta y toca una parte del dibujo. Puedes pintar el cielo, las flores y la llama. Si algo no te gusta, puedes deshacerlo.',
-  },
+  }
 ]
 
 export const obtenerLamina = (id) => laminas.find((lamina) => lamina.id === id)

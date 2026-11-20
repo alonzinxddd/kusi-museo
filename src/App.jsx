@@ -11,6 +11,7 @@ import { Tesoro } from './paginas/tesoro/Tesoro'
 import { Cuento } from './paginas/cuento/Cuento'
 import { JuegoDanzas } from './paginas/danzas/JuegoDanzas'
 import { JuegoBurbujas } from './paginas/burbujas/JuegoBurbujas'
+import { JuegoTradicion } from './paginas/tradicion/JuegoTradicion'
 import { Sonidos } from './paginas/sonidos/Sonidos'
 import { MiRincon } from './paginas/coleccion/MiRincon'
 import { ParaAcompanantes } from './paginas/acompanantes/ParaAcompanantes'
@@ -30,6 +31,7 @@ export default function App() {
                 <Route path="salas/:idSala/rompecabezas/:idPuzzle" element={<Rompecabezas />} />
                 <Route path="salas/:idSala/tesoro" element={<Tesoro />} />
                 <Route path="salas/:idSala/danzas" element={<JuegoDanzas />} />
+                <Route path="salas/:idSala/tradicion" element={<JuegoTradicion />} />
                 <Route path="salas/:idSala/burbujas" element={<JuegoBurbujas />} />
                 <Route path="salas/:idSala/cuento/:idCuento" element={<Cuento />} />
                 <Route path="salas/:idSala/hacer-sonidos/:modo" element={<Sonidos />} />

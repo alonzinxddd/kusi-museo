@@ -1,6 +1,5 @@
 import llamaImg from '../activos/imagenes/rompecabeza/llama.png'
 import selvaImg from '../activos/imagenes/rompecabeza/animales.png'
-import coloresImg from '../activos/imagenes/rompecabeza/colores.png'
 
 const imagenesRompecabeza = import.meta.glob(
   '../activos/imagenes/rompecabeza/*.{png,jpg,jpeg,webp,svg}',
@@ -33,17 +32,6 @@ export const rompecabezas = [
     piezasIniciales: 4,
     bienvenida:
       'Toca una pieza y luego otra para cambiarlas de lugar. Puedes elegir la imagen que quieras armar y cambiar entre cuatro o nueve piezas.',
-  },
-  {
-    id: 'manta',
-    nombre: 'Piezas de colores',
-    descripcion: 'El rincón de arte de Kusi, lleno de pinceles y telas.',
-    imagen: buscarImagenRompecabeza('colores', coloresImg),
-    salaId: 'colores',
-    recompensaId: 'puzzle-colores',
-    piezasIniciales: 4,
-    bienvenida:
-      'Mira bien la imagen completa y busca dónde va cada pieza. Toca dos piezas para intercambiarlas.',
   },
 ]
 

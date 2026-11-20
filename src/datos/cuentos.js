@@ -1,4 +1,3 @@
-import semillaDefecto from '../activos/imagenes/cuentos/la-semilla-curiosa.svg'
 import conciertoDefecto from '../activos/imagenes/cuentos/el-concierto-del-bosque.svg'
 
 // Carga automática de todas las imágenes que pongas en activos/imagenes/cuentos
@@ -41,47 +40,6 @@ const resolverImagenPagina = (cuentoId, numeroPagina, imagenGeneral) => {
  * Cuentos cortos para leer y escuchar.
  */
 export const cuentos = [
-  {
-    id: 'semilla',
-    titulo: 'La semilla curiosa',
-    salaId: 'cultura',
-    recompensaId: 'cuento-cultura',
-    imagen: semillaDefecto,
-    color: '#6E8A70',
-    colorSuave: '#E2EBDD',
-    resumen: 'Una semilla pequeñita descubre en qué se puede convertir.',
-    bienvenida:
-      'Acomódate y escucha. Puedes tocar «Escuchar» para oír la página o leerla tú mismo.',
-    paginas: [
-      {
-        texto:
-          'Luna tiene una semilla pequeñita en la mano. Su abuela le dice: «Déjala en la tierra y cuídala con paciencia».',
-        posicion: '42% 48%',
-      },
-      {
-        texto:
-          'Luna riega la tierra cada mañana. Un día, una hojita verde asoma y saluda al sol con sus dos hojas pequeñas.',
-        posicion: '52% 62%',
-      },
-      {
-        texto:
-          'La planta crece, crece y crece. Una mañana se abre una flor de cantuta. ¡La semilla curiosa ya sabe en qué quería convertirse!',
-        posicion: '62% 46%',
-      },
-      {
-        texto:
-          'Luna invita a su llama Kusi a oler la flor. «Gracias, semilla», dice. «Gracias, paciencia», dice la abuela.',
-        posicion: '38% 56%',
-      },
-    ].map((p, idx) => ({
-      ...p,
-      imagen: resolverImagenPagina('semilla', idx + 1, semillaDefecto),
-    })),
-    preguntas: [
-      '¿Qué necesita una semilla para crecer?',
-      '¿Qué te gustaría sembrar y cuidar en tu comunidad?',
-    ],
-  },
   {
     id: 'concierto',
     titulo: 'El concierto del bosque',
